@@ -4,7 +4,7 @@
 :root {
   --bg-light: #f4f4f5;       /* Light grey background */
   --ui-dark: #27272a;        /* Dark grey for borders/shadows */
-  --accent-red: #8B1C1C;     /* Deep red for buttons/highlights */
+  --accent-red: #8b1c1c;     /* Deep red for buttons/highlights */
   --text-main: #000000;      /* Black for main text */
   --text-side: #52525b;      /* Grey for secondary text */
   --glass-bg: rgba(244, 244, 245, 0.65); /* Translucent light grey */
@@ -94,17 +94,28 @@ p {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border-right: 3px solid var(--ui-dark);
-  /* Sidebar uses glass to show map behind it */
-  background: var(--glass-bg);
+  /* Pure black right border for harsh contrast */
+  border-right: 3px solid #000000; 
+  /* Deep dark grey glass based on your --ui-dark color */
+  background: rgba(39, 39, 42, 0.95); 
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Switch text to light grey */
+  color: var(--bg-light); 
 }
 
 .sidebar h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  border-bottom: 3px solid var(--ui-dark);
+  /* Pure black border under the header */
+  border-bottom: 3px solid #000000; 
   padding-bottom: 0.5rem;
+  color: var(--bg-light); /* Ensure header text is light */
+}
+
+/* Make sure the highlight span inside the dark menu still pops */
+.sidebar h2 .highlight {
+  color: var(--accent-red);
 }
 
 .nav-menu {
@@ -116,7 +127,7 @@ p {
 
 .nav-menu a {
   text-decoration: none;
-  color: var(--text-main);
+  color: var(--bg-light); /* Light text for links */
   font-weight: bold;
   font-size: 1.1rem;
   padding: 0.5rem;
@@ -125,10 +136,11 @@ p {
 }
 
 .nav-menu a:hover, .nav-menu a.active {
-  border: 3px solid var(--ui-dark);
+  /* Use pure black for the brutalist borders and shadows on the dark background */
+  border: 3px solid #000000; 
   background-color: var(--accent-red);
-  color: #fff;
-  box-shadow: 4px 4px 0px var(--ui-dark);
+  color: #ffffff;
+  box-shadow: 4px 4px 0px #000000; 
   transform: translateX(5px);
 }
 
@@ -215,4 +227,104 @@ p {
   max-width: 500px;
   text-align: center;
   /* Reusing the brutal-glass class handles the borders, background, and shadows */
+}
+
+/* =========================================
+   PAGE HEADER (Knowledge Page)
+   ========================================= */
+.page-header {
+  margin: 2rem 4rem 1rem 4rem; /* Spacing at the top */
+  padding: 3rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   MASONRY COLLAGE LAYOUT (Vue.js Driven)
+   ========================================= */
+.collage-grid {
+  /* Creates a masonry collage effect */
+  column-count: 2;
+  column-gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* For very wide screens, make it 3 columns */
+@media (min-width: 1400px) {
+  .collage-grid {
+    column-count: 3;
+  }
+}
+
+/* For mobile, 1 column */
+@media (max-width: 992px) {
+  .collage-grid {
+    column-count: 1;
+  }
+}
+
+.collage-card {
+  /* Prevent cards from breaking across columns */
+  break-inside: avoid; 
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Make media cards fit the brutalist box nicely */
+.card-type-image, .card-type-video {
+  padding: 1rem; /* Slightly less padding for pure media cards */
+}
+
+.card-type-image .placeholder-box, 
+.card-type-video .placeholder-box {
+  width: 100%;
+  border: none; /* Let the parent card handle the border */
+  box-shadow: none;
+}
+
+/* =========================================
+   GLOBAL FOOTER
+   ========================================= */
+.brutal-footer {
+  border-top: 3px solid #000000;
+  background-color: #18181b; /* Matches the bottom of the gradient */
+  color: var(--bg-light);
+  padding: 2rem 4rem;
+  margin-top: auto; /* Pushes to bottom if content is short */
+}
+
+.brutal-footer .text-side {
+  color: #a1a1aa; /* Lighter grey for footer subtext */
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   RESPONSIVE VIDEO EMBEDS
+   ========================================= */
+.embed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.embed-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Keeps standard video proportions */
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000; /* Brutalist shadow for the video player */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.embed-container iframe:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
 }

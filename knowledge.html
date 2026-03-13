@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cultural Motifs | Knowledge</title>
+  <title>Cultural Motifs | Background</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body>
+<body class="gradient-bg">
 
   <nav class="sidebar">
     <h2>Motif <span class="highlight">Map</span></h2>
@@ -18,29 +19,159 @@
 
   <main class="main-content">
     
-    <div class="knowledge-container">
+    <header class="page-header brutal-glass">
+      <h1>Background: Creativity, Computing, and <span class="highlight">Asian Representation</span></h1>
+      <p class="text-side mt-1">Exploring the intersection of cultural traditions, stereotypes, and ethnocomputing.</p>
+    </header>
+
+    <div id="app" class="knowledge-container-wide">
       
-      <div class="knowledge-header brutal-glass">
-        <h1>The <span class="highlight">Four-Fold</span> Cloud Pattern</h1>
-        <p class="text-side">Jiangnan Region • Origins: 14th Century • Symbolism: Auspiciousness</p>
-      </div>
+      <div class="collage-grid">
+        
+        <div 
+          v-for="(card, index) in contentCards" 
+          :key="index" 
+          class="brutal-glass collage-card"
+          :class="'card-type-' + card.type"
+        >
+          
+          <template v-if="card.type === 'text'">
+            <h3 v-if="card.title" class="card-title" v-html="card.title"></h3>
+            <p v-html="card.content"></p>
+          </template>
 
-      <div class="brutal-glass" style="margin-bottom: 2rem;">
-        <h3>Historical Context</h3>
-        <p>The Four-Fold Cloud pattern is deeply rooted in the textile and architectural history of the Jiangnan region (encompassing modern-day Jiangsu, Zhejiang, Shanghai, and Anhui). This motif is distinctly recognized by its four curling nodes that intersect at a central point.</p>
-        <p>Unlike earlier flowing cloud designs, the brutal symmetry of the four-fold variation emerged as a standardized pattern during the late Yuan and early Ming dynasties, heavily utilized in official brocades and structural woodcarvings.</p>
-      </div>
+          <template v-if="card.type === 'image'">
+            <div class="placeholder-box image-placeholder">
+              <div>
+                <span class="icon">📷</span><br>
+                <strong v-html="card.title"></strong><br>
+                <span class="text-side" v-html="card.caption"></span>
+              </div>
+            </div>
+          </template>
 
-      <div class="brutal-glass">
-        <h3>Symbolic Meaning</h3>
-        <p>Geometrically, the four folds represent the <span class="highlight">Four Cardinal Directions</span>. Philosophically, the continuous looping of the lines without a clear beginning or end signifies eternity, endless fortune, and the pervasive nature of *Qi* (energy).</p>
-        <br>
-        <a href="index.html" class="brutal-btn">← Back to Map</a>
+          <template v-if="card.type === 'video'">
+            
+            <div v-if="card.embedSrc" class="embed-container">
+              <iframe 
+                :src="card.embedSrc" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+              </iframe>
+              <div class="mt-1">
+                <strong v-html="card.title"></strong><br>
+                <span class="text-side" v-html="card.caption"></span>
+              </div>
+            </div>
+
+            <div v-else class="placeholder-box video-placeholder">
+              <div>
+                <span class="icon">🎥</span><br>
+                <strong v-html="card.title"></strong><br>
+                <span class="text-side" v-html="card.caption"></span>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
       </div>
 
     </div>
 
+    <footer class="brutal-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Cultural Motifs Digital Space. All rights reserved.</p>
+        <p class="text-side">Built with Modern Brutalism & Glassmorphism</p>
+      </div>
+    </footer>
+
   </main>
 
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          // Every paragraph, image, and video is separated into this array.
+          // This makes adding/editing content incredibly easy.
+          contentCards: [
+            {
+              type: 'text',
+              title: 'A Different Story',
+              content: 'Asian and Asian American communities have long contributed to science, technology, art, and design. Yet stereotypes about Asian people often tell a very different story. In many Western contexts, Asians are frequently portrayed as technically skilled but not creative or innovative.'
+            },
+            {
+              type: 'text',
+              title: 'The <span class="highlight">Model Minority</span>',
+              content: 'One example is the "model minority" stereotype, which portrays Asian Americans as hardworking and academically successful but often reduces their identity to test scores and technical ability. While this stereotype may appear positive, it can hide real struggles.'
+            },
+            {
+              type: 'image',
+              title: 'Representation Infographic',
+              caption: 'High percentage of technical workers vs. lower percentage of leadership roles.'
+            },
+            {
+              type: 'text',
+              title: 'The <span class="highlight">Bamboo Ceiling</span>',
+              content: 'A term used to describe barriers that prevent many Asian professionals from reaching leadership positions in industries such as technology and business. They remain underrepresented in creative decision-making roles.'
+            },
+            {
+              type: 'video',
+              title: 'Can stereotypes ever be good?',
+              caption: 'Sheila Marie Orfano and Densho',
+              embedSrc: 'https://www.youtube-nocookie.com/embed/aFXmyNUaXFo?si=-I3TJjo-VSmriFeJ' 
+            },
+            {
+              type: 'text',
+              title: 'Challenging Stereotypes',
+              content: 'This curriculum begins from a different perspective: Asian cultures have long traditions of creativity, design, and innovation. Chinese architectural patterns, textile motifs, and decorative systems are carefully constructed visual systems built through rules, transformations, and structural logic.'
+            },
+            {
+              type: 'video',
+              title: 'The Bamboo Ceiling | Define American',
+              caption: 'Define American with Jose Antonio Vargas',
+              embedSrc: 'https://www.youtube-nocookie.com/embed/JN6Kp1z9TaE?si=GY7NsTPsJrQgG0-F' 
+            },
+            {
+              type: 'video',
+              title: 'How Asian Americans Break The Bamboo Ceiling | Forbes',
+              caption: 'Forbes',
+              embedSrc: 'https://www.youtube-nocookie.com/embed/MYOAPz4yJf8?si=tQ5WHQeXj2qPy1wY' 
+            },
+            {
+              type: 'image',
+              title: 'Ruyi Cloud',
+              caption: 'Transforming natural forms into strict geometric systems.'
+            },
+            {
+              type: 'image',
+              title: 'Armor Pattern',
+              caption: 'Combining aesthetic beauty with intense structural strength.'
+            },
+            {
+              type: 'text',
+              title: 'Ethnocomputing',
+              content: 'The Culturally Situated Design Tools (CSDT) approach is based on <strong>ethnocomputing</strong>. Rather than separating culture from technology, it shows that many cultural artifacts already embody forms of mathematical and algorithmic thinking.'
+            },
+            {
+              type: 'video',
+              title: 'Pattern Generation',
+              caption: 'Short demonstration of a pattern being generated step-by-step using code or CSnap.'
+            },
+            {
+              type: 'text',
+              title: 'Why This Matters',
+              content: 'Understanding the computational ideas within cultural traditions helps challenge stereotypes about who creates technology. Students are encouraged to see computing not only as coding, but as a way of understanding and designing complex systems.'
+            }
+          ]
+        }
+      }
+    }).mount('#app')
+  </script>
 </body>
 </html>
