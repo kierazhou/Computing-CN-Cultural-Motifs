@@ -1,205 +1,394 @@
 /* =========================================
-   HERITAGE NEO-BRUTALISM VARIABLES
+   1. HERITAGE DESIGN TOKENS & RESET
    ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --ds-red: #860000;         /* Primary deep red */
-  --ds-yellow: #FFD174;      /* Accent warm yellow */
-  --ds-tan: #D6BB9D;         /* Neutral tan/beige */
-  --ds-dark: #371010;        /* Deep burgundy/brown */
-  --ds-cream: #FFF8EE;       /* Warm off-white background */
-  
-  --font-heading: 'Libre Baskerville', serif;
-  --font-body: 'Roboto', sans-serif;
+  --color-primary: #860000;
+  /* Deep Red */
+  --color-bg-light: #FFF8EE;
+  /* Warm Cream */
+  --color-bg-dark: #371010;
+  /* Deep Burgundy */
+  --color-surface: #D6BB9D;
+  /* Neutral Tan */
+  --color-text-dark: #2A0A0A;
+  /* Almost Black */
+  --color-text-light: #FFF8EE;
+  /* Warm Cream */
+  --color-accent: #FFD174;
+  /* Warm Yellow */
+
+  --font-serif: 'Crimson Pro', serif;
+  --font-sans: 'Work Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 body {
-  background-color: var(--ds-cream);
-  color: var(--ds-dark);
-  font-family: var(--font-body);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
   overflow-x: hidden;
+  /* Archival paper noise overlay */
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
 }
 
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  color: var(--ds-dark);
+/* =========================================
+   2. BASE TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  color: var(--color-primary);
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 1rem;
-  font-size: 1.05rem;
+  font-size: 16px;
 }
 
 .text-side {
-  color: #7A6363; /* Softer brownish-grey */
-  font-size: 0.9rem;
+  color: #5A4343;
+  font-size: 14px;
 }
 
-/* Use the deep red for text highlights to ensure it's readable on cream */
 .highlight {
-  color: var(--ds-red); 
-  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.text-light {
+  color: var(--color-text-light) !important;
 }
 
 /* =========================================
-   NEO-BRUTALIST PANELS & BUTTONS
+   3. REUSABLE COMPONENTS
    ========================================= */
-.brutal-glass {
-  background: rgba(255, 248, 238, 0.75); /* Cream glass */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 3px solid var(--ds-dark); /* Thick burgundy border */
-  box-shadow: 8px 8px 0px var(--ds-dark); /* Solid brutalist shadow */
-  padding: 2.5rem;
-  border-radius: 0; /* Strictly square */
-  transition: all 0.2s ease;
-}
-
-/* Make headings pop inside the cream cards */
-.brutal-glass h1, .brutal-glass h2, .brutal-glass h3 {
-  color: var(--ds-dark);
-}
-
 .brutal-btn {
   display: inline-block;
-  background-color: var(--ds-red);
-  color: var(--ds-cream);
-  font-family: var(--font-heading); /* Serif buttons add a great heritage touch */
-  text-decoration: none;
-  font-weight: 700;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 0.75rem 1.5rem;
-  border: 3px solid var(--ds-dark);
-  box-shadow: 4px 4px 0px var(--ds-dark);
-  border-radius: 0; /* Strictly square */
+  border: 2px solid var(--color-primary);
+  border-radius: 0px;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
 }
 
 .brutal-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--ds-dark);
-  background-color: var(--ds-yellow); /* High contrast hover color */
-  color: var(--ds-dark);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
 }
 
-.brutal-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--ds-dark);
-}
-
-/* =========================================
-   LAYOUT: SIDEBAR & MAIN CONTENT
-   ========================================= */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 280px;
-  height: 100vh;
-  z-index: 1000;
+/* Standard Box Placeholders */
+.placeholder-box {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary);
   display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-  background: var(--ds-dark); /* Dark burgundy */
-  border-right: 4px solid var(--ds-dark); /* Hard edge */
-  box-shadow: 6px 0px 0px var(--ds-red); /* Solid red brutalist shadow pushing into the page */
-  color: var(--ds-cream);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
   border-radius: 0;
 }
 
-.sidebar h2 {
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
-  border-bottom: 3px solid var(--ds-red); /* Thick divider */
-  padding-bottom: 1rem;
-  color: var(--ds-cream);
+/* =========================================
+   4. GLOBAL TOP NAVIGATION
+   ========================================= */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-surface);
+  position: relative;
+  z-index: 2000;
 }
 
-.sidebar h2 .highlight {
-  color: var(--ds-yellow); /* Yellow highlight pops beautifully on dark burgundy */
+.top-nav-logo {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: var(--color-text-light);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.nav-menu {
+.top-nav-logo span {
+  color: var(--color-accent);
+}
+
+.top-nav-links {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
-.nav-menu a {
+.top-nav-links a {
   text-decoration: none;
-  color: var(--ds-tan);
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border: 3px solid transparent; /* Prepare for hover border */
-  border-radius: 0;
-  transition: all 0.2s ease;
+  color: var(--color-surface);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
 }
 
-.nav-menu a:hover, .nav-menu a.active {
-  background-color: var(--ds-red);
-  color: var(--ds-cream);
-  border: 3px solid var(--ds-cream); /* Stark light border on hover */
-  box-shadow: 4px 4px 0px var(--ds-yellow); /* Yellow block shadow */
-  transform: translateX(5px);
+.top-nav-links a:hover,
+.top-nav-links a.active {
+  color: var(--color-accent);
 }
 
 /* =========================================
-   MAP PAGE SPECIFICS
+   5. MAP PAGE SPECIFICS (index.html)
    ========================================= */
+.map-container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 74px);
+  /* 100vh minus Top Nav height */
+}
+
 #map {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: 1; /* Behind UI */
+  height: 100%;
+  background-color: var(--color-bg-dark) !important;
+  z-index: 1;
 }
 
 .hero-overlay {
   position: absolute;
   top: 2rem;
-  right: 2rem;
-  width: 350px;
+  left: 2rem;
   z-index: 1000;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-surface);
+  padding: 2rem;
+  width: 320px;
 }
 
-/* Override Leaflet Popup to match Brutalism */
+/* Leaflet Popup Overrides */
 .leaflet-popup-content-wrapper {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 3px solid var(--ui-dark) !important;
+  background: var(--color-bg-light) !important;
+  border: 2px solid var(--color-primary) !important;
   border-radius: 0 !important;
-  box-shadow: 6px 6px 0px var(--ui-dark) !important;
-  color: var(--text-main) !important;
+  color: var(--color-text-dark) !important;
+  box-shadow: none !important;
 }
+
 .leaflet-popup-tip {
-  display: none; /* Hide the little triangle for a blockier look */
+  display: none;
+  /* Hide the little triangle */
 }
+
 .popup-img {
   width: 100%;
-  border: 2px solid var(--ui-dark);
+  border: 1px solid var(--color-surface);
   margin-bottom: 10px;
 }
 
-/* =========================================
-   KNOWLEDGE PAGE SPECIFICS
-   ========================================= */
-.knowledge-container {
-  padding: 4rem;
-  max-width: 900px;
-  margin: 0 auto; /* Center in the remaining space */
+/* Map Node Animation */
+@keyframes algorithmicPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(90deg);
+    opacity: 0.8;
+  }
 }
 
-.knowledge-header {
+.pulse-anim {
+  animation: algorithmicPulse 6s infinite cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.3s ease;
+}
+
+.pulse-anim:hover {
+  animation-play-state: paused;
+  transform: scale(1.3) !important;
+  filter: drop-shadow(0 0 10px var(--color-accent));
+}
+
+/* =========================================
+   6. SPLIT-PANE MOTIF PAGE (motif.html)
+   ========================================= */
+/* Wrapper classes controlled by Vue */
+.theme-light {
+  background-color: var(--color-bg-light);
+  transition: background-color 0.4s ease;
+}
+
+.theme-dark {
+  background-color: var(--color-bg-dark);
+  transition: background-color 0.4s ease;
+}
+
+.split-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Left Sidebar (Acts as Table of Contents) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border-right: 2px solid var(--color-primary);
+  color: var(--color-text-dark);
+}
+
+.sidebar .breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.sidebar .nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar .nav-menu a {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar .nav-menu a:hover,
+.sidebar .nav-menu a.active {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-primary);
+}
+
+/* Right Content Area */
+.motif-content {
+  margin-left: 300px;
+  padding: 4rem;
+  width: calc(100% - 300px);
+}
+
+.serif-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.drop-cap {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 64px;
+  color: var(--color-primary);
+  line-height: 48px;
+  padding-top: 4px;
+  padding-right: 8px;
+}
+
+.museum-card {
+  max-width: 800px;
+  padding-bottom: 2rem;
+}
+
+/* Dark Mode Overrides for Code/Math Tabs */
+.dark-card p {
+  color: var(--color-text-light);
+}
+
+.dark-placeholder {
+  background-color: transparent;
+  border: 1px solid var(--color-surface);
+}
+
+/* =========================================
+   7. KNOWLEDGE PAGE EDITORIAL (knowledge.html)
+   ========================================= */
+.editorial-container {
+  max-width: 720px;
+  margin: 4rem auto 8rem auto;
+  padding: 0 2rem;
+}
+
+.editorial-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-surface);
+  padding-bottom: 2rem;
+}
+
+.editorial-header h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.editorial-block {
   margin-bottom: 3rem;
 }
 
+.editorial-block h3 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+}
+
+.editorial-block p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+}
+
+.editorial-media {
+  margin: 3rem 0;
+  border: 1px solid var(--color-surface);
+  padding: 1rem;
+  background-color: var(--color-bg-light);
+}
+
+.embed-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--color-primary);
+}
+
 /* =========================================
-   CUSTOM INTRO MODAL
+   8. MODALS & UTILITIES
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -207,8 +396,9 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(39, 39, 42, 0.85); /* Dark transparent background */
-  z-index: 9999; /* Ensures it sits above everything */
+  background-color: rgba(42, 10, 10, 0.9);
+  /* Deep Burgundy Tint */
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,122 +407,143 @@ p {
 
 .modal-overlay.hidden {
   opacity: 0;
-  pointer-events: none; /* Allows clicking through once hidden */
+  pointer-events: none;
 }
 
-.modal-content {
-  max-width: 500px;
-  text-align: center;
-  /* Reusing the brutal-glass class handles the borders, background, and shadows */
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
-/* =========================================
-   PAGE HEADER (Knowledge Page)
-   ========================================= */
-.page-header {
-  margin: 2rem 4rem 1rem 4rem; /* Spacing at the top */
-  padding: 3rem;
+.mb-2 {
+  margin-bottom: 2rem;
 }
 
 .mt-1 {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
-/* =========================================
-   MASONRY COLLAGE LAYOUT (Vue.js Driven)
-   ========================================= */
-.collage-grid {
-  /* Creates a masonry collage effect */
-  column-count: 2;
-  column-gap: 2rem;
-  padding-bottom: 4rem;
+.mt-2 {
+  margin-top: 2rem;
 }
 
-/* For very wide screens, make it 3 columns */
-@media (min-width: 1400px) {
-  .collage-grid {
-    column-count: 3;
-  }
+/* Layout utilities for content */
+.banner-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+  margin-bottom: 0.5rem;
 }
 
-/* For mobile, 1 column */
-@media (max-width: 992px) {
-  .collage-grid {
-    column-count: 1;
-  }
+/* Layout utilities for content */
+.banner-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+  margin-bottom: 0.5rem;
 }
 
-.collage-card {
-  /* Prevent cards from breaking across columns */
-  break-inside: avoid; 
+.caption {
+  font-size: 12px;
+  color: #666;
+  font-family: var(--font-sans);
   margin-bottom: 2rem;
-  padding: 2rem;
+  font-style: italic;
 }
 
-.card-title {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+.theme-dark .caption {
+  color: #aaa;
 }
 
-/* Make media cards fit the brutalist box nicely */
-.card-type-image, .card-type-video {
-  padding: 1rem; /* Slightly less padding for pure media cards */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
-.placeholder-box {
-  background-color: var(--ds-tan); /* Use the warm tan instead of grey */
-  border: 3px solid var(--ds-dark);
-  box-shadow: 6px 6px 0px var(--ds-dark);
+.image-grid img {
+  width: 100%;
+  border: 1px solid var(--color-surface);
+  background: #fff;
+}
+
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+/* Video embed wrapper */
+.video-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Dual buttons layout for the modal */
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-buttons .brutal-btn {
+  flex: 1;
   text-align: center;
-  padding: 2rem;
-  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Optional: An outline variant for the secondary button */
+.outline-btn {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.outline-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-bg-light);
+}
+
+/* Compact map legend floating over the map */
+.map-legend {
+  position: absolute;
+  top: 100px; /* Adjust based on your top-nav height */
+  right: 2rem;
+  z-index: 500; /* Needs to be above leaflet (400) */
+  background: var(--color-bg-dark);
+  border: 1px solid #5a3c3c;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* Make Leaflet Popups match your dark theme */
+.leaflet-popup-content-wrapper {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-primary);
   border-radius: 0;
 }
-
-.placeholder-box:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--ds-dark);
+.leaflet-popup-tip {
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-primary);
 }
-
-/* =========================================
-   GLOBAL FOOTER
-   ========================================= */
-.brutal-footer {
-  border-top: 3px solid #000000;
-  background-color: #18181b; /* Matches the bottom of the gradient */
-  color: var(--bg-light);
-  padding: 2rem 4rem;
-  margin-top: auto; /* Pushes to bottom if content is short */
-}
-
-.brutal-footer .text-side {
-  color: #a1a1aa; /* Lighter grey for footer subtext */
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-}
-
-/* =========================================
-   RESPONSIVE VIDEO EMBEDS
-   ========================================= */
-.embed-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.popup-img {
   width: 100%;
-}
-
-.embed-container iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Keeps standard video proportions */
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0px #000000; /* Brutalist shadow for the video player */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.embed-container iframe:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #000000;
+  height: auto;
+  border: 1px solid var(--color-surface);
+  margin: 10px 0;
 }

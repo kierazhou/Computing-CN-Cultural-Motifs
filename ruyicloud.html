@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8">
+  <title>Ruyi Cloud | Motif Map</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* =========================================
+       PAGE SPECIFIC UTILITIES & OVERRIDES
+       ========================================= */
+    
+    /* Layout styling for scrolling sections */
+    .motif-content {
+      margin-left: 300px;
+      padding: 0; /* Removing padding here so background colors bleed to edges */
+      width: calc(100% - 300px);
+    }
+
+    .content-wrapper {
+      max-width: 1000px; /* Increased from 800px */
+      margin: 0 auto;
+      padding: 4rem;
+    }
+
+    .section-light {
+      background-color: var(--color-bg-light);
+      color: var(--color-text-dark);
+    }
+
+    .section-dark {
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-light);
+    }
+    
+    .section-dark .serif-title, 
+    .section-dark h3 {
+      color: var(--color-text-light);
+    }
+
+    /* FIX: Force Sidebar link styling in case style.css misses them */
+    .sidebar .nav-menu a {
+      display: block; 
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      color: var(--color-text-dark);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1rem;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .sidebar .nav-menu a:hover, 
+    .sidebar .nav-menu a.active {
+      background-color: var(--color-primary);
+      color: var(--color-text-light);
+      border: 1px solid var(--color-primary);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 320px; /* Positions it just outside the 300px sidebar */
+      z-index: 1000;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    }
+
+    /* Image and layout utilities */
+    .caption {
+      font-size: 12px;
+      color: #666;
+      font-family: var(--font-sans);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .section-dark .caption {
+      color: #aaa;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border: 1px solid var(--color-surface);
+      background: #fff;
+    }
+
+    .split-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div class="split-layout">
+    
+    <nav class="sidebar">
+      <div class="breadcrumb">MAP / GLOBAL / RUYI CLOUD</div>
+      
+      <h2 style="font-size: 28px; line-height: 1.2;">Ruyi Cloud<br><span style="font-size: 20px; font-weight: normal;">(如意云纹)</span></h2>
+      
+      <ul class="nav-menu" style="margin-top: 2rem;">
+        <li><a href="#origins" class="nav-link active">Origins & History</a></li>
+        <li><a href="#modern" class="nav-link">Modern Usage</a></li>
+        <li><a href="#geometry" class="nav-link">Math & Geometry</a></li>
+        <li><a href="#software" class="nav-link">Software</a></li>
+      </ul>
+
+      <a href="index.html" class="brutal-btn" style="margin-top: auto; text-align: center;">
+        ← Back to Atlas
+      </a>
+    </nav>
+
+    <main class="main-content motif-content">
+      
+      <section id="origins" class="section-light">
+        <div class="content-wrapper">
+          <div style="text-align: center; margin-bottom: 3rem;">
+            <img src="images/Ruyi_Overview.png" alt="Overview of Ruyi Cloud Pattern" style="max-width: 100%; height: auto; display: inline-block; border: 2px solid var(--color-primary); margin-bottom: 0.5rem;">
+            <p class="caption">Overview of the general pattern and some traditional usage. Image Credit: [Insert Origin/Author]</p>
+          </div>
+
+          <h1 class="serif-title mt-2">Origins</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%;">
+            <p><span class="drop-cap">T</span>he Ruyi Cloud (如意云纹) motif is rooted in ancient Chinese symbolic art, where "ruyi" literally means "as one wishes" or "according to one's desires." Originally, the word referred to a ceremonial object (a ruyi scepter) that symbolized good fortune, power, and auspiciousness, its curved head often shaped like stylized clouds or lingzhi (a sacred fungus associated with longevity and good luck). By the Ming and Qing dynasties, cloud-like decorative elements became widely known as ruyi motifs in art and design because the cloud shape carried the same auspicious connotations and visual form.</p>
+            
+            <p>These auspicious cloud forms, part of a broader tradition of xiangyun or "lucky clouds祥云", have an even deeper lineage in Chinese decorative lexicons that appear on bronzes, textiles, and ceramics as early as the Shang and Eastern Zhou periods. They represented not just weather phenomena, but symbolic blessings of harmony, prosperity, and connection between the earthly and celestial realms.</p>
+
+            <div class="video-wrapper">
+              <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DSOEr4kCOiH/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DSOEr4kCOiH/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DSOEr4kCOiH/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by TimelessChina (@timeless_china)</a></p></div></blockquote>
+              <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+
+            <p>Because of their auspicious symbolism, Ruyi Cloud motifs became widely used across material culture. They decorated textiles and clothing, often appearing on robes, collars, and accessories where repeating curves and swirling forms integrated with other symbolic embroidery. Cloud collars (yunjian / 云肩) are a notable historical example: detachable shoulder pieces in multi-lobed cloud shapes worn with formal garments that symbolized universal harmony and blessings.</p>
+
+            <div style="text-align: center; margin: 3rem 0;">
+              <a href="https://hangrace.com.au/blogs/news/shouldering-the-clouds-the-timeless-elegance-of-yunjian-and-its-modern-renaissance" target="_blank" class="brutal-btn">Read more about the history of Yunjian</a>
+            </div>
+
+            <div class="image-grid">
+              <div>
+                <img src="images/Cloud Shoulder_Lay Flat.jpg" alt="Cloud Shoulder Lay Flat">
+                <p class="caption">Image Credit: Pinterest</p>
+              </div>
+              <div>
+                <img src="images/CloudShoulder_FullBody.jpeg" alt="Cloud Shoulder Full Body">
+                <p class="caption">Image Credit: NewHanfu.com</p>
+              </div>
+            </div>
+
+            <p>Ruyi Cloud–like shapes also appeared in architecture, furniture, and everyday objects. In buildings, cloud bands and cloud–scroll motifs could be carved in woodwork, painted on beams, or woven into screens and lattice panels as ornamentation that connected the earthly structure to auspicious sky imagery. On ceramics and lacquerware, cloud motifs formed borders or central designs that signified well-being and harmony.</p>
+
+            <div class="image-grid">
+              <div>
+                <img src="images/Cloud_Ceramic.jpg" alt="A Ruyi Cloud ceramic work">
+                <p class="caption">A Ruyi Cloud ceramic work. Image Credit: AntiqueKeeper.ca</p>
+              </div>
+              <div>
+                <img src="images/Cloud_Architecture.jpeg" alt="Ruyi cloud used in architectural decoration">
+                <p class="caption">Ruyi cloud used in architectural decoration. Image Credit: gtimg.com</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="modern" class="section-light">
+        <div class="content-wrapper">
+          <h1 class="serif-title">Modern Usage</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%;">
+            <p><span class="drop-cap">T</span>oday the Ruyi Cloud motif continues to evolve across art, design, and media. In contemporary architecture, elements inspired by ruyi curves (like undulating bridges and ornamental roof tiles) deliberately evoke auspicious form while integrating modern structural techniques. For example, bridges and public installations sometimes use "ruyi-like" curves to suggest harmony and continuous flow within a landscape.</p>
+
+            <p>In fashion and textiles, cloud motifs derived from Ruyi and auspicious clouds are used in embroidery, printed fabrics, and accessory design to signal good fortune and cultural resonance. These patterns can be found in both traditional garments and modern designer collections that blend heritage aesthetics with contemporary styles.</p>
+
+            <p>Beyond physical culture, cloud-inspired motifs have entered digital and interactive spaces such as video game art and user interface design, where their rhythmic forms are reinterpreted as repeating pattern sets, background motifs, or animated ornamental elements that bridge ancient symbolism with emergent digital aesthetics.</p>
+
+            <div class="image-grid mt-2">
+              <div>
+                <img src="images/Cloud_Game.jpeg" alt="Cloud motif in Black Myth: Wukong">
+                <p class="caption">Cloud motif is frequently used in character outfit design in Video game: Black Myth: Wukong. Image Credit: standard.co.uk</p>
+              </div>
+              <div>
+                <img src="images/Cloud_Industry.jpg" alt="Ruyi cloud motif in modern industrial design">
+                <p class="caption">Ruyi cloud motif is commonly seen in modern industrial design. Image Credit: Xiaohongshu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="geometry" class="section-dark">
+        <div class="content-wrapper">
+          <h1 class="serif-title">Math & Geometry</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%; border-bottom: none;">
+            
+            <div class="split-container border-bottom">
+              <div>
+                <p>Chinese cloud motifs appear in many forms, but this curriculum focuses on the Ruyi Cloud because of its clear structure and repeatable geometry. Compared to freer, more organic cloud patterns, the Ruyi Cloud has a recognizable shape with consistent curves, making it especially suitable for mathematical and computational analysis. Starting with this pattern helps students clearly see how artistic designs are built from geometric rules before moving on to more complex variations.</p>
+                
+                <h3 style="color: var(--color-accent); margin-top: 1.5rem;">1. Identify the Base Unit</h3>
+                <p>All Ruyi Cloud patterns begin with a single cloud unit. This unit can be decomposed into two opposing logarithmic spirals joined together. By identifying this smallest repeatable element, students practice decomposition, breaking a complex design into manageable parts.</p>
+                
+                <h3 style="color: var(--color-accent); margin-top: 1.5rem;">2. Coordinates and Lines</h3>
+                <p>To construct the cloud digitally, students use Cartesian coordinates to place and control curves. Each point is defined by an (x, y) pair, where x represents horizontal movement and y represents vertical movement. Lines and curves drawn between coordinates form borders; borders combine to create shapes, and multiple shapes form a pattern group. This step connects visual design to precise spatial reasoning.</p>
+              </div>
+              
+              <div class="placeholder-box" style="background-color: transparent; border: 1px solid var(--color-surface); height: 100%; min-height: 400px;">
+                <div>
+                  <span class="icon" style="font-size: 2rem;">📐</span><br>
+                  <span style="color: var(--color-surface); font-family: var(--font-mono); font-size: 14px;">[Placeholder: 4 pictures and 2 sentences will go here]</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="split-container mt-2">
+              <div>
+                <h3 style="color: var(--color-accent);">3. Symmetry</h3>
+                <p>A complete Ruyi Cloud unit is formed by combining two mirrored spirals. This introduces bilateral symmetry and helps students see how reflection creates balance and structure within a design.</p>
+                
+                <h3 style="color: var(--color-accent); margin-top: 1.5rem;">4. Pattern Formation</h3>
+                <p>Using coordinate placement and symmetry, students extend a single cloud unit into a four-fold Ruyi Cloud pattern. Through rotation and repetition, they explore how local rules generate a larger, continuous design.</p>
+              </div>
+              
+              <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                  <img src="images/RuyiBasic02 script pic.png" alt="Ruyi Basic Script" style="width: 100%; border: 1px solid var(--color-surface); margin-bottom: 0.5rem;">
+                  <img src="images/RuyiBasic02.png" alt="Ruyi Basic Render" style="width: 100%; border: 1px solid var(--color-surface); margin-bottom: 0.5rem;">
+                  <a href="https://csdt.org/projects/53418/run" target="_blank" class="brutal-btn" style="width: 100%; text-align: center;">Click to See Code</a>
+                </div>
+                
+                <div>
+                  <img src="images/RuyiBasic01.png" alt="Ruyi Basic Render Alternative" style="width: 100%; border: 1px solid var(--color-surface); margin-bottom: 0.5rem;">
+                  <a href="https://csdt.org/projects/53417/run" target="_blank" class="brutal-btn" style="width: 100%; text-align: center;">Click to See Code</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="software" class="section-dark">
+        <div class="content-wrapper">
+          <h1 class="serif-title">Software Representation</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%; border-bottom: none;">
+            <p class="mb-2">Translating mathematical forms into generative code allows the Ruyi motif to scale dynamically.</p>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <a href="https://csdt.org/projects/53419/run" target="_blank" class="brutal-btn">Run Four-Fold Ruyi Pattern Code</a>
+            </div>
+
+            <p class="text-center mb-2" style="text-align: center; font-style: italic;">While you can also make it prettier, like a pattern above.</p>
+
+            <div class="image-grid mt-2">
+              <div>
+                <img src="images/Ruyi_FourFoldBasic script pic.png" alt="Four Fold Basic Script">
+                <p class="caption">Core looping structure for a four-fold generation.</p>
+              </div>
+              <div>
+                <img src="images/Ruyi_FourFoldBasic.png" alt="Four Fold Basic Render">
+                <p class="caption">The visual output from the generative script.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+    </main>
+    
+    <a href="#top" class="scroll-top-btn brutal-btn">↑ Top</a>
+
+  </div>
+
+  <script>
+    // Lightweight script to update the active sidebar link as you scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".sidebar .nav-menu a.nav-link");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remove active class from all links
+            navLinks.forEach((link) => link.classList.remove("active"));
+            
+            // Add active class to the link corresponding to the current section
+            const id = entry.target.getAttribute("id");
+            const activeLink = document.querySelector(`.sidebar .nav-menu a[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      }, {
+        rootMargin: "-20% 0px -70% 0px" // Triggers when a section is near the top of the viewport
+      });
+
+      sections.forEach((section) => observer.observe(section));
+    });
+  </script>
+</body>
+</html>

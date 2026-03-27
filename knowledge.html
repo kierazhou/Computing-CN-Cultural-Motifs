@@ -2,176 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cultural Motifs | Background</title>
+  <title>Background | Dynamic Heritage</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="gradient-bg">
+<body>
 
-  <nav class="sidebar">
-    <h2>Motif <span class="highlight">Map</span></h2>
-    <ul class="nav-menu">
-      <li><a href="index.html">Interactive Map</a></li>
-      <li><a href="knowledge.html" class="active">Background Lore</a></li>
-      <li><a href="#">About Project</a></li>
+  <header class="top-nav" style="background-color: var(--color-bg-light); border-bottom: 1px solid var(--color-surface);">
+    <a href="index.html" class="top-nav-logo" style="color: var(--color-text-dark);">
+      <span style="color: var(--color-primary);">⧉</span> Mapping <span style="color: var(--color-primary);">Chinese Cultural Motifs</span>
+    </a>
+    <ul class="top-nav-links">
+      <li><a href="index.html" style="color: var(--color-text-dark);">Interactive Map</a></li>
+      <li><a href="knowledge.html" class="active" style="color: var(--color-primary);">Background</a></li>
     </ul>
-  </nav>
+  </header>
 
-  <main class="main-content">
+  <main id="app" class="editorial-container">
     
-    <header class="page-header brutal-glass">
-      <h1>Background: Creativity, Computing, and <span class="highlight">Asian Representation</span></h1>
-      <p class="text-side mt-1">Exploring the intersection of cultural traditions, stereotypes, and ethnocomputing.</p>
+    <header class="editorial-header">
+      <h1>Creativity, Computing, and <span style="color: var(--color-primary);">Asian Representation</span></h1>
+      <p class="text-side" style="font-family: var(--font-sans); font-size: 16px;">
+        Exploring the intersection of cultural traditions, stereotypes, and ethnocomputing.
+      </p>
     </header>
 
-    <div id="app" class="knowledge-container-wide">
+    <div v-for="(card, index) in contentCards" :key="index" class="editorial-block">
       
-      <div class="collage-grid">
-        
-        <div 
-          v-for="(card, index) in contentCards" 
-          :key="index" 
-          class="brutal-glass collage-card"
-          :class="'card-type-' + card.type"
-        >
-          
-          <template v-if="card.type === 'text'">
-            <h3 v-if="card.title" class="card-title" v-html="card.title"></h3>
-            <p v-html="card.content"></p>
-          </template>
+      <template v-if="card.type === 'text'">
+        <h3 v-if="card.title" v-html="card.title"></h3>
+        <p v-html="card.content"></p>
+      </template>
 
-          <template v-if="card.type === 'image'">
-            <div class="placeholder-box image-placeholder">
-              <div>
-                <span class="icon">📷</span><br>
-                <strong v-html="card.title"></strong><br>
-                <span class="text-side" v-html="card.caption"></span>
-              </div>
-            </div>
-          </template>
-
-          <template v-if="card.type === 'video'">
-            
-            <div v-if="card.embedSrc" class="embed-container">
-              <iframe 
-                :src="card.embedSrc" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-              </iframe>
-              <div class="mt-1">
-                <strong v-html="card.title"></strong><br>
-                <span class="text-side" v-html="card.caption"></span>
-              </div>
-            </div>
-
-            <div v-else class="placeholder-box video-placeholder">
-              <div>
-                <span class="icon">🎥</span><br>
-                <strong v-html="card.title"></strong><br>
-                <span class="text-side" v-html="card.caption"></span>
-              </div>
-            </div>
-
-          </template>
-
+      <template v-if="card.type === 'image'">
+        <div class="editorial-media">
+          <div style="background-color: var(--color-surface); height: 300px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem; color: var(--color-bg-dark);">📷</span>
+          </div>
+          <div style="padding-top: 1rem;">
+            <strong style="font-family: var(--font-sans); font-size: 14px;" v-html="card.title"></strong><br>
+            <span style="font-family: var(--font-serif); font-size: 14px; color: #666;" v-html="card.caption"></span>
+          </div>
         </div>
-      </div>
+      </template>
+
+      <template v-if="card.type === 'video'">
+        <div class="editorial-media">
+          <div class="embed-container">
+            <iframe v-if="card.embedSrc" :src="card.embedSrc" frameborder="0" allowfullscreen></iframe>
+            <div v-else style="background-color: var(--color-surface); height: 300px; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 2rem; color: var(--color-bg-dark);">🎥</span>
+            </div>
+          </div>
+          <div style="padding-top: 1rem;">
+            <strong style="font-family: var(--font-sans); font-size: 14px;" v-html="card.title"></strong><br>
+            <span style="font-family: var(--font-serif); font-size: 14px; color: #666;" v-html="card.caption"></span>
+          </div>
+        </div>
+      </template>
 
     </div>
-
-    <footer class="brutal-footer">
-      <div class="footer-content">
-        <p>&copy; 2026 Cultural Motifs Digital Space. All rights reserved.</p>
-        <p class="text-side">Built with Modern Brutalism & Glassmorphism</p>
-      </div>
-    </footer>
 
   </main>
 
   <script>
     const { createApp } = Vue;
-
     createApp({
       data() {
         return {
-          // Every paragraph, image, and video is separated into this array.
-          // This makes adding/editing content incredibly easy.
           contentCards: [
-            {
-              type: 'text',
-              title: 'A Different Story',
-              content: 'Asian and Asian American communities have long contributed to science, technology, art, and design. Yet stereotypes about Asian people often tell a very different story. In many Western contexts, Asians are frequently portrayed as technically skilled but not creative or innovative.'
-            },
-            {
-              type: 'text',
-              title: 'The <span class="highlight">Model Minority</span>',
-              content: 'One example is the "model minority" stereotype, which portrays Asian Americans as hardworking and academically successful but often reduces their identity to test scores and technical ability. While this stereotype may appear positive, it can hide real struggles.'
-            },
-            {
-              type: 'image',
-              title: 'Representation Infographic',
-              caption: 'High percentage of technical workers vs. lower percentage of leadership roles.'
-            },
-            {
-              type: 'text',
-              title: 'The <span class="highlight">Bamboo Ceiling</span>',
-              content: 'A term used to describe barriers that prevent many Asian professionals from reaching leadership positions in industries such as technology and business. They remain underrepresented in creative decision-making roles.'
-            },
-            {
-              type: 'video',
-              title: 'Can stereotypes ever be good?',
-              caption: 'Sheila Marie Orfano and Densho',
-              embedSrc: 'https://www.youtube-nocookie.com/embed/aFXmyNUaXFo?si=-I3TJjo-VSmriFeJ' 
-            },
-            {
-              type: 'text',
-              title: 'Challenging Stereotypes',
-              content: 'This curriculum begins from a different perspective: Asian cultures have long traditions of creativity, design, and innovation. Chinese architectural patterns, textile motifs, and decorative systems are carefully constructed visual systems built through rules, transformations, and structural logic.'
-            },
-            {
-              type: 'video',
-              title: 'The Bamboo Ceiling | Define American',
-              caption: 'Define American with Jose Antonio Vargas',
-              embedSrc: 'https://www.youtube-nocookie.com/embed/JN6Kp1z9TaE?si=GY7NsTPsJrQgG0-F' 
-            },
-            {
-              type: 'video',
-              title: 'How Asian Americans Break The Bamboo Ceiling | Forbes',
-              caption: 'Forbes',
-              embedSrc: 'https://www.youtube-nocookie.com/embed/MYOAPz4yJf8?si=tQ5WHQeXj2qPy1wY' 
-            },
-            {
-              type: 'image',
-              title: 'Ruyi Cloud',
-              caption: 'Transforming natural forms into strict geometric systems.'
-            },
-            {
-              type: 'image',
-              title: 'Armor Pattern',
-              caption: 'Combining aesthetic beauty with intense structural strength.'
-            },
-            {
-              type: 'text',
-              title: 'Ethnocomputing',
-              content: 'The Culturally Situated Design Tools (CSDT) approach is based on <strong>ethnocomputing</strong>. Rather than separating culture from technology, it shows that many cultural artifacts already embody forms of mathematical and algorithmic thinking.'
-            },
-            {
-              type: 'video',
-              title: 'Pattern Generation',
-              caption: 'Short demonstration of a pattern being generated step-by-step using code or CSnap.'
-            },
-            {
-              type: 'text',
-              title: 'Why This Matters',
-              content: 'Understanding the computational ideas within cultural traditions helps challenge stereotypes about who creates technology. Students are encouraged to see computing not only as coding, but as a way of understanding and designing complex systems.'
-            }
+            { type: 'text', title: 'A Different Story', content: 'Asian and Asian American communities have long contributed to science, technology, art, and design. Yet stereotypes about Asian people often tell a very different story. In many Western contexts, Asians are frequently portrayed as technically skilled but not creative or innovative.' },
+            { type: 'text', title: 'The <span style="color: var(--color-primary);">Model Minority</span>', content: 'One example is the "model minority" stereotype, which portrays Asian Americans as hardworking and academically successful but often reduces their identity to test scores and technical ability. While this stereotype may appear positive, it can hide real struggles.' },
+            { type: 'image', title: 'Representation Infographic', caption: 'High percentage of technical workers vs. lower percentage of leadership roles.' },
+            { type: 'text', title: 'The <span style="color: var(--color-primary);">Bamboo Ceiling</span>', content: 'A term used to describe barriers that prevent many Asian professionals from reaching leadership positions in industries such as technology and business. They remain underrepresented in creative decision-making roles.' },
+            { type: 'video', title: 'Can stereotypes ever be good?', caption: 'Sheila Marie Orfano and Densho', embedSrc: 'https://www.youtube-nocookie.com/embed/aFXmyNUaXFo?si=-I3TJjo-VSmriFeJ' },
+            { type: 'text', title: 'Challenging Stereotypes', content: 'This curriculum begins from a different perspective: Asian cultures have long traditions of creativity, design, and innovation. Chinese architectural patterns, textile motifs, and decorative systems are carefully constructed visual systems built through rules, transformations, and structural logic.' },
+            { type: 'video', title: 'The Bamboo Ceiling', caption: 'Define American with Jose Antonio Vargas', embedSrc: 'https://www.youtube-nocookie.com/embed/JN6Kp1z9TaE?si=GY7NsTPsJrQgG0-F' },
+            { type: 'image', title: 'Ruyi Cloud', caption: 'Transforming natural forms into strict geometric systems.' },
+            { type: 'text', title: 'Ethnocomputing', content: 'The Culturally Situated Design Tools (CSDT) approach is based on <strong>ethnocomputing</strong>. Rather than separating culture from technology, it shows that many cultural artifacts already embody forms of mathematical and algorithmic thinking.' }
           ]
         }
       }

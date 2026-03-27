@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sichuan Cloud Brocade | Motif Map</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <div id="app" :class="themeClass" class="split-layout">
+    
+    <nav class="sidebar">
+      <div class="breadcrumb">MAP / SICHUAN / CLOUD BROCADE</div>
+      
+      <h2 style="font-size: 28px; line-height: 1.2;">Sichuan<br>Cloud Brocade</h2>
+      
+      <ul class="nav-menu" style="margin-top: 2rem;">
+        <li>
+          <a href="#" 
+             :class="{ active: activeTab === 'origins' }" 
+             @click.prevent="activeTab = 'origins'">
+            Origins & History
+          </a>
+        </li>
+        <li>
+          <a href="#" 
+             :class="{ active: activeTab === 'geometry' }" 
+             @click.prevent="activeTab = 'geometry'">
+            Math & Geometry
+          </a>
+        </li>
+        <li>
+          <a href="#" 
+             :class="{ active: activeTab === 'code' }" 
+             @click.prevent="activeTab = 'code'">
+            Code Breakdown
+          </a>
+        </li>
+      </ul>
+
+      <a href="index.html" class="brutal-btn" style="margin-top: auto; text-align: center;">
+        ← Back to Atlas
+      </a>
+    </nav>
+
+    <main class="main-content motif-content">
+      
+      <section v-if="activeTab === 'origins'" class="tab-section origins-mode">
+        <h1 class="serif-title">The Roots of the Cloud</h1>
+        
+        <div class="museum-card mt-2">
+          <div class="placeholder-box image-placeholder mb-1">
+            <div>
+              <span class="icon" style="font-size: 2rem;">🏛️</span><br>
+              <strong>Archival Photo</strong><br>
+              <span class="text-side">Sepia-toned historical loom</span>
+            </div>
+          </div>
+          <p><span class="drop-cap">S</span>ichuan brocade, or Shu brocade, is one of the four famous brocades in China, with a history stretching back over 2,000 years. The cloud motif is not merely decorative; it represents the breath of the earth and the connection between the mortal realm and the heavens.</p>
+          <p>This section directly addresses the intersection of traditional weaving techniques and algorithmic thinking long before the invention of modern computers, challenging the notion that technical rigor is devoid of deep creative history.</p>
+        </div>
+      </section>
+
+      <section v-if="activeTab === 'geometry'" class="tab-section technical-mode">
+        <h1 class="serif-title text-light">Structural Geometry</h1>
+        
+        <div class="museum-card dark-card mt-2">
+          <p class="text-light mb-2">The cloud pattern relies on strict repetitive symmetry and a foundational grid layout.</p>
+          
+          <div class="placeholder-box dark-placeholder" style="aspect-ratio: 16/9;">
+            <div>
+              <span class="icon" style="font-size: 2rem;">📐</span><br>
+              <strong style="color: var(--color-accent); font-family: var(--font-mono);">θ = 45°</strong><br>
+              <span style="color: var(--color-surface); font-family: var(--font-mono); font-size: 14px;">SVG Pattern Geometry Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section v-if="activeTab === 'code'" class="tab-section technical-mode">
+        <h1 class="serif-title text-light">Algorithmic Reconstruction</h1>
+        
+        <div class="museum-card dark-card mt-2">
+          <p class="text-light mb-2">Translating the loom's punch-card logic into modern procedural generation.</p>
+          
+          <div class="placeholder-box dark-placeholder" style="aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 2rem; background-color: #1a0808;">
+            <code style="color: var(--color-accent); font-family: var(--font-mono); white-space: pre-wrap;">
+// Generating the Ruyi Cloud Base
+function drawCloudBase(x, y, scale) {
+  ctx.beginPath();
+  ctx.arc(x, y, scale * 10, 0, Math.PI * 2);
+  ctx.fillStyle = '#860000';
+  ctx.fill();
+  // Transform and repeat
+  applySymmetry(x, y);
+}
+            </code>
+          </div>
+          <p style="color: var(--color-surface); margin-top: 1rem; font-size: 14px;">
+            Fig 1. Static code imagery displaying the core loop. The mathematical symmetry of the pattern is executed via procedural transformations.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          // Sets 'origins' as the default view when the page loads
+          activeTab: 'origins' 
+        }
+      },
+      computed: {
+        // Dynamically changes the wrapper class based on the active tab
+        themeClass() {
+          return this.activeTab === 'origins' ? 'theme-light' : 'theme-dark';
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

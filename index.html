@@ -2,51 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cultural Motifs | Map</title>
+  <title>Dynamic Heritage | Motif Map</title>
   <link rel="stylesheet" href="style.css">
-  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: var(--color-bg-dark); overflow: hidden;">
 
   <div id="introModal" class="modal-overlay">
-    <div class="modal-content brutal-glass">
-      <h2>Welcome to the <br><span class="highlight">Motif Archive</span></h2>
-      <p style="margin-top: 1rem;">This digital space explores diverse cultural patterns across different regions and ethnicities. Click the markers on the map to uncover the history, symbolism, and lore behind each unique design.</p>
-      <button id="enterMapBtn" class="brutal-btn" style="margin-top: 1rem;">Enter Map</button>
+    <div class="hero-overlay" style="position: relative; top: auto; left: auto; text-align: center; max-width: 500px;">
+      <h2 style="color: var(--color-text-light); margin-bottom: 1rem;">Welcome to the <br><span style="color: var(--color-accent);">Motif Archive</span></h2>
+      <p style="color: var(--color-surface); font-size: 14px; margin-bottom: 2rem;">
+        This digital space explores diverse cultural patterns. Select a highlighted region on the map to uncover the history, structural geometry, and lore behind each design.
+      </p>
+      
+      <div class="modal-buttons">
+        <a href="knowledge.html" class="brutal-btn outline-btn">About</a>
+        <button id="enterMapBtn" class="brutal-btn">View Map</button>
+      </div>
     </div>
   </div>
 
-  <nav class="sidebar">
-    <h2>Mapping <span style="color: white;">Chinese Cultural Motifs</span></h2>
-    <ul class="nav-menu">
+  <header class="top-nav">
+    <a href="index.html" class="top-nav-logo">
+      <span style="font-size: 1.2rem; margin-right: 8px;">⧉</span> Mapping <span>Chinese Cultural Motifs</span>
+    </a>
+    <ul class="top-nav-links">
       <li><a href="index.html" class="active">Interactive Map</a></li>
       <li><a href="knowledge.html">Background</a></li>
-      <li><a href="#">About Project</a></li>
     </ul>
-  </nav>
+  </header>
 
-  <main class="main-content">
-    
+  <main class="map-container">
     <div id="map"></div>
 
-    <div class="hero-overlay brutal-glass">
-      <h3>Featured <span class="highlight">Markers</span></h3>
-      <p class="text-side" style="margin-bottom: 1rem;">Active patterns currently on display:</p>
-      
-      <ul style="list-style: square; padding-left: 1.5rem; margin-bottom: 1rem;">
-        <li><strong>Four-Fold Cloud</strong> (Jiangnan)</li>
-        <li><strong>Endless Knot</strong> (Xizang)</li>
-        <li><strong>Mountain Armor</strong> (Xi'an)</li>
-      </ul>
-      
-      <p class="text-side" style="font-size: 0.8rem;">Click any marker on the map to reveal its historical background and visual references.</p>
-    </div>
+    <div class="map-legend">
 
+      <h3 style="color: var(--color-accent); font-size: 14px; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Motif Regions</h3>
+      <p style="font-size: 12px; color: var(--color-surface); margin-bottom: 1rem; line-height: 1.4;">
+        Select a highlighted territory to explore its regional pattern.
+      </p>
+      <ul style="list-style: none; padding: 0; margin: 0; color: var(--color-text-light); font-size: 13px; line-height: 1.8;">
+        <li><span class="legend-color" style="background: #e63946;"></span> Jiangnan (Ruyi Cloud)</li>
+        <li><span class="legend-color" style="background: #f4a261;"></span> Xizang (Endless Knot)</li>
+        <li><span class="legend-color" style="background: #2a9d8f;"></span> Shaanxi (Mountain Armor)</li>
+        <li><span class="legend-color" style="background: #e9c46a;"></span> Henan (Thunder Pattern)</li>
+      </ul>
+    </div>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
