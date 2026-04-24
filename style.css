@@ -547,3 +547,8 @@ p {
   border: 1px solid var(--color-surface);
   margin: 10px 0;
 }
+
+/* Makes the map layer slightly brighter and higher contrast */
+.leaflet-tile-pane {
+  filter: brightness(1.2) contrast(1.1);
+}

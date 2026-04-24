@@ -21,11 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = L.map('map').setView([35.8617, 104.1954], 4);
 
   // Add a dark basemap to fit your design system
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+ // 1. Draw the Base Map (Geography only, no text)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; CARTO',
     subdomains: 'abcd',
     maxZoom: 10,
     minZoom: 3
+  }).addTo(map);
+
+  // --- (Your polygon code goes here, nothing changes!) ---
+
+  // 2. Create a custom pane for the text labels so they sit ON TOP of the polygons
+  map.createPane('labels');
+  map.getPane('labels').style.zIndex = 650; // Keeps it above Leaflet's polygon layer (400)
+  map.getPane('labels').style.pointerEvents = 'none'; // Ensures you can still click the polygons underneath
+
+  // 3. Draw the Labels Map
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    pane: 'labels'
   }).addTo(map);
 
   // --- 3. MOTIF REGION DATA (POLYGONS) ---
