@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Rough outline of Shaanxi (Xi'an region)
       coords: [[39.0, 108.0], [39.0, 111.0], [35.0, 110.0], [32.0, 109.0], [33.0, 106.0], [36.0, 106.0]],
       color: "#2a9d8f", // Teal
-      image: "images/MountainArmor.png", // Replace with your actual image path
+      image: "images/MountainArmor01.png", // Replace with your actual image path
       link: "#", // Add link when ready
       desc: "A distinct interlocking armor pattern prevalent during the Tang Dynasty, modeled after the character for 'mountain'."
     },
