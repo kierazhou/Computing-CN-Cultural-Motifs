@@ -7,7 +7,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,77 +18,245 @@
     <ul class="top-nav-links">
       <li><a href="index.html" style="color: var(--color-text-dark);">Interactive Map</a></li>
       <li><a href="knowledge.html" class="active" style="color: var(--color-primary);">Background</a></li>
-      <li><a href="about.html" style="color: var(--color-text-dark);">About</a></li>
+      <li><a href="about.html"  style="color: var(--color-text-dark);">About</a></li>
       <li><a href="acknowledgement.html" style="color: var(--color-text-dark);">Acknowledgements</a></li>
     </ul>
   </header>
 
-  <main id="app" class="editorial-container">
-    
-    <header class="editorial-header">
-      <h1>Creativity, Computing, and <span style="color: var(--color-primary);">Asian Representation</span></h1>
-      <p class="text-side" style="font-family: var(--font-sans); font-size: 16px;">
-        Exploring the intersection of cultural traditions, stereotypes, and ethnocomputing.
-      </p>
-    </header>
+  <main id="app" class="background-page-shell">
 
-    <div v-for="(card, index) in contentCards" :key="index" class="editorial-block">
-      
-      <template v-if="card.type === 'text'">
-        <h3 v-if="card.title" v-html="card.title"></h3>
-        <p v-html="card.content"></p>
-      </template>
+    <section class="background-main-column">
+      <header class="editorial-header about-editorial-header background-header">
+        <span class="section-kicker">Background for Students</span>
+        <h1>Creativity, Computing, and <span class="highlight">Chinese Cultural Motifs</span></h1>
+        <p class="about-subtitle">
+          This page introduces why motifs matter, how stereotypes shape ideas about creativity,
+          and how ethnocomputing helps us read cultural design as a computational system.
+        </p>
+      </header>
 
-      <template v-if="card.type === 'image'">
-        <div class="editorial-media">
-          <div style="background-color: var(--color-surface); height: 300px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 2rem; color: var(--color-bg-dark);">📷</span>
-          </div>
-          <div style="padding-top: 1rem;">
-            <strong style="font-family: var(--font-sans); font-size: 14px;" v-html="card.title"></strong><br>
-            <span style="font-family: var(--font-serif); font-size: 14px; color: #666;" v-html="card.caption"></span>
-          </div>
+      <section class="editorial-block background-intro-block">
+        <div class="keyword-ribbon">
+          <span>Motifs as Systems</span>
+          <span>Creativity and Structure</span>
+          <span>Computational Thinking</span>
+          <span>Ethnocomputing</span>
         </div>
-      </template>
 
-      <template v-if="card.type === 'video'">
-        <div class="editorial-media">
+        <p>
+          <span class="drop-cap">M</span>otifs have long played a central role in Chinese material and
+          architectural cultures. From window and door screens that filter light and organize space,
+          to patterned surfaces used in clothing, tools, and protective gear, motifs operate as systems
+          rather than standalone decorations. They balance repetition and variation, rigidity and flexibility,
+          allowing a small structural unit to extend across a surface with precision and control. These designs
+          are not only visually appealing, but also practical. They regulate airflow, reinforce structure,
+          and signal identity through ordered form. Their histories show how people have long used rule-based
+          thinking to solve material and spatial problems.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            In this curriculum, motifs are treated not just as images to look at, but as systems to analyze, rebuild, and code.
+          </p>
+        </div>
+
+        <p>
+          Today, motif logics continue to appear in architecture, fashion, digital design, and game environments.
+          Yet the computational thinking embedded in these systems often goes unnoticed. This CSDT curriculum makes
+          those ideas visible by translating motif-based cultural designs into programmable structures. Through guided
+          exploration and making, students learn how constraints, transformations, repetition, and pattern rules can
+          generate complex results.
+        </p>
+
+        <p>
+          This Chinese Cultural Motif CSDT centers design traditions especially associated with Han cultural forms,
+          while also working toward broader inclusion of motifs from underrepresented ethnic groups in China. The
+          curriculum brings together architectural motifs, surface patterns, and structurally rigid forms such as
+          armor-inspired designs to create multiple points of entry for learners with different interests. By showing
+          how functional demands shape visual systems, the project highlights a form of cultural computing that may be
+          especially meaningful for students drawn to engineering, construction, design, and system-oriented thinking.
+        </p>
+      </section>
+
+      <section class="editorial-block">
+        <h3 class="about-section-title">Background: Creativity, Computing, and Anti-Asian Racism</h3>
+
+        <p>
+          Asian and Asian American communities have made major contributions to science, technology, art, and design.
+          Even so, common stereotypes often tell a narrower story. In many school, workplace, and technology settings,
+          Asians are described as good at technical work but not especially creative, visionary, or innovative. These
+          assumptions shape how people see others and sometimes how they learn to see themselves.
+        </p>
+
+        <div class="interactive-note">
+          <h4>Why discuss stereotypes here?</h4>
+          <p>
+            Because ideas about who is “good at computing” also shape ideas about who is seen as imaginative,
+            leader-like, and capable of designing the future.
+          </p>
+        </div>
+
+        <p>
+          One example is the <strong>model minority</strong> stereotype. It presents Asian Americans as hardworking, high-achieving,
+          and academically successful. Although this may sound positive at first, it often reduces people to test
+          scores, discipline, and technical performance. It can flatten individuality, hide struggle, and encourage
+          a narrow definition of success in which competence is valued more than creativity.
+        </p>
+
+        <div class="background-media-card">
           <div class="embed-container">
-            <iframe v-if="card.embedSrc" :src="card.embedSrc" frameborder="0" allowfullscreen></iframe>
-            <div v-else style="background-color: var(--color-surface); height: 300px; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 2rem; color: var(--color-bg-dark);">🎥</span>
-            </div>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/aFXmyNUaXFo?si=-I3TJjo-VSmriFeJ"
+              frameborder="0"
+              allowfullscreen
+              title="Can stereotypes ever be good?">
+            </iframe>
           </div>
-          <div style="padding-top: 1rem;">
-            <strong style="font-family: var(--font-sans); font-size: 14px;" v-html="card.title"></strong><br>
-            <span style="font-family: var(--font-serif); font-size: 14px; color: #666;" v-html="card.caption"></span>
+          <div class="background-media-caption">
+            <strong>Can stereotypes ever be good?</strong>
+            <span>
+              This short video helps introduce why even seemingly “positive” stereotypes can still be harmful.
+              It is useful here because the model minority myth often sounds complimentary while quietly limiting
+              how Asian people are understood.
+            </span>
           </div>
         </div>
-      </template>
 
-    </div>
+        <p>
+          Another example is the <strong>bamboo ceiling</strong>. This term refers to barriers that prevent many Asian professionals
+          from moving into leadership roles. Even when Asians are well represented in technology fields, they are
+          often less visible in decision-making, creative direction, and executive positions. In other words, being
+          included in technical work does not automatically mean being recognized as someone who leads, imagines,
+          or shapes the direction of the field.
+        </p>
+
+        <div class="background-media-card">
+          <div class="embed-container">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/JN6Kp1z9TaE?si=GY7NsTPsJrQgG0-F"
+              frameborder="0"
+              allowfullscreen
+              title="The Bamboo Ceiling">
+            </iframe>
+          </div>
+          <div class="background-media-caption">
+            <strong>The Bamboo Ceiling</strong>
+            <span>
+              This video introduces the idea that visibility in a field does not always lead to authority within it.
+              It helps explain why this curriculum is interested not only in participation, but also in recognition,
+              creativity, and leadership.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="editorial-block">
+        <h3 class="about-section-title">Rethinking Creativity through Cultural Design</h3>
+
+        <p>
+          This curriculum begins from a different premise: creativity has always been part of Asian cultures, and it
+          is visible in patterned design traditions. Chinese motifs are not random decorations. They are built through
+          structure, repetition, transformation, and constraint. Motif systems organize space, control light and airflow,
+          transform natural forms into repeatable geometry, and combine strength with visual order in objects such as
+          architecture and armor.
+        </p>
+
+        <div class="about-card-grid">
+          <article class="about-info-card">
+            <h4>Space and Function</h4>
+            <p>
+              Motif designs help organize surfaces and openings, often balancing beauty with practical needs such as
+              structure, filtering, and enclosure.
+            </p>
+          </article>
+
+          <article class="about-info-card">
+            <h4>Pattern and Transformation</h4>
+            <p>
+              Cloud and lattice motifs often depend on repeatable units, mirrored structure, scaling, and controlled
+              variation, which makes them ideal for computational analysis.
+            </p>
+          </article>
+
+          <article class="about-info-card">
+            <h4>Strength and System</h4>
+            <p>
+              Armor-inspired forms show how rigidity, connection, and modular repetition can become both functional
+              solutions and visual design principles.
+            </p>
+          </article>
+        </div>
+
+        <p class="mt-2">
+          Seen this way, creativity and logic do not oppose each other. These traditions show that artistic expression
+          can also be systematic, and that structure can be a source of invention rather than a limit on it.
+        </p>
+      </section>
+
+      <section class="editorial-block">
+        <h3 class="about-section-title">Ethnocomputing: Culture as System</h3>
+
+        <p>
+          This project uses an approach called ethnocomputing. Ethnocomputing examines how computational ideas are
+          embedded in cultural practices and knowledge systems. Instead of treating computing as something that begins
+          only with modern code, this perspective shows that people have long used rules, patterns, procedures, and
+          structures to design, build, and solve problems in culturally specific ways.
+        </p>
+
+        <div class="interactive-note">
+          <h4>What does that mean here?</h4>
+          <p>
+            It means that a motif can be understood as more than an image. It can also be studied as a set of relations,
+            transformations, and design rules that can be modeled computationally.
+          </p>
+        </div>
+
+        <p>
+          In educational settings, ethnocomputing helps connect computing learning to culture without treating culture
+          as decoration or background context. Cultural artifacts such as patterns, tools, buildings, and craft processes
+          can be read as systems. They contain organization, logic, abstraction, and repeatable procedures. In this
+          curriculum, Chinese motifs are explored as systems that students can observe, analyze, reconstruct, and
+          program. This makes computing more culturally grounded while also showing that technical knowledge has always
+          been connected to human history, design, and community practice.
+        </p>
+      </section>
+    </section>
+
+    <aside class="background-sidebar">
+      <div class="background-sidebar-inner">
+        <div class="background-sidebar-card">
+          <span class="section-kicker">How to Use This Page</span>
+          <h3>Reading Guide</h3>
+          <p>
+            Start with the introduction to understand why motifs matter. Then move through the sections on stereotypes,
+            creativity, and ethnocomputing before exploring the map and individual motifs.
+          </p>
+        </div>
+
+        <div class="background-sidebar-card">
+          <span class="section-kicker">Key Question</span>
+          <h3>What counts as computing?</h3>
+          <p>
+            This page invites you to consider whether computing exists only in code, or whether it can also be found in
+            cultural design, material practice, and systems of pattern.
+          </p>
+        </div>
+
+        <div class="background-sidebar-card">
+          <span class="section-kicker">Next Step</span>
+          <h3>Explore the Motifs</h3>
+          <p>
+            Once you finish this page, continue to the interactive map and examine how different motifs connect cultural
+            history with computational structure.
+          </p>
+          <div class="about-contact-list">
+            <a href="index.html">Open the Interactive Map</a>
+            <a href="about.html">Read About the Project</a>
+          </div>
+        </div>
+      </div>
+    </aside>
 
   </main>
-
-  <script>
-    const { createApp } = Vue;
-    createApp({
-      data() {
-        return {
-          contentCards: [
-            { type: 'text', title: 'A Different Story', content: 'Asian and Asian American communities have long contributed to science, technology, art, and design. Yet stereotypes about Asian people often tell a very different story. In many Western contexts, Asians are frequently portrayed as technically skilled but not creative or innovative.' },
-            { type: 'text', title: 'The <span style="color: var(--color-primary);">Model Minority</span>', content: 'One example is the "model minority" stereotype, which portrays Asian Americans as hardworking and academically successful but often reduces their identity to test scores and technical ability. While this stereotype may appear positive, it can hide real struggles.' },
-            { type: 'image', title: 'Representation Infographic', caption: 'High percentage of technical workers vs. lower percentage of leadership roles.' },
-            { type: 'text', title: 'The <span style="color: var(--color-primary);">Bamboo Ceiling</span>', content: 'A term used to describe barriers that prevent many Asian professionals from reaching leadership positions in industries such as technology and business. They remain underrepresented in creative decision-making roles.' },
-            { type: 'video', title: 'Can stereotypes ever be good?', caption: 'Sheila Marie Orfano and Densho', embedSrc: 'https://www.youtube-nocookie.com/embed/aFXmyNUaXFo?si=-I3TJjo-VSmriFeJ' },
-            { type: 'text', title: 'Challenging Stereotypes', content: 'This curriculum begins from a different perspective: Asian cultures have long traditions of creativity, design, and innovation. Chinese architectural patterns, textile motifs, and decorative systems are carefully constructed visual systems built through rules, transformations, and structural logic.' },
-            { type: 'video', title: 'The Bamboo Ceiling', caption: 'Define American with Jose Antonio Vargas', embedSrc: 'https://www.youtube-nocookie.com/embed/JN6Kp1z9TaE?si=GY7NsTPsJrQgG0-F' },
-            { type: 'image', title: 'Ruyi Cloud', caption: 'Transforming natural forms into strict geometric systems.' },
-            { type: 'text', title: 'Ethnocomputing', content: 'The Culturally Situated Design Tools (CSDT) approach is based on <strong>ethnocomputing</strong>. Rather than separating culture from technology, it shows that many cultural artifacts already embody forms of mathematical and algorithmic thinking.' }
-          ]
-        }
-      }
-    }).mount('#app')
-  </script>
 </body>
 </html>

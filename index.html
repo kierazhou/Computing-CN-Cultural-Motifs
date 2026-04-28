@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Dynamic Heritage | Motif Map</title>
@@ -7,35 +8,50 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body style="background-color: var(--color-bg-dark); overflow: hidden;">
 
   <div id="introModal" class="modal-overlay">
-    <div class="hero-overlay" style="position: relative; top: auto; left: auto; text-align: left; max-width: 800px; width: 100%; padding: 3rem; box-sizing: border-box;">
-      
+    <div class="hero-overlay"
+      style="position: relative; top: auto; left: auto; text-align: left; max-width: 800px; width: 100%; padding: 3rem; box-sizing: border-box;">
+
       <h2 style="color: var(--color-text-light); margin-bottom: 1.5rem; text-align: center;">
         Welcome to the <br><span style="color: var(--color-accent);">Motif Archive</span>
       </h2>
-      
+
       <div style="color: var(--color-surface); font-size: 16px; margin-bottom: 2.5rem; line-height: 1.7;">
         <p style="margin-bottom: 1rem;">
-          <strong>Mapping Chinese Cultural Motifs</strong> is an interactive cartography project that maps the rich, multi-ethnic presentation of Chinese cultural motifs. Built at the intersection of culturally responsive computing and design, this archive serves as a tool for CS education that actively works to fight against the hemogeneous thinking of Chinese culture and anti-Asian racism.
+          <strong>Mapping Chinese Cultural Motifs</strong> is an interactive cartography project that maps the rich,
+          multi-ethnic presentation of Chinese cultural motifs. Built at the intersection of culturally responsive
+          computing and design, this archive serves as a tool for CS education that actively works to fight against the
+          hemogeneous thinking of Chinese culture and anti-Asian racism.
         </p>
-        
+
         <p style="margin-bottom: 1.5rem;">
-          By breaking down traditional patterns into their geometric and algorithmic rules, this project challenges the monolithic stereotypes of the "Model Minority" myth. It reclaims the intellectual and creative agency of early artisans, the original programmers of textiles and architecture, to prove that extreme technical rigor and profound creative expression are deeply entwined in Chinese and Asian heritage.
+          By breaking down traditional patterns into their geometric and algorithmic rules, this project challenges the
+          monolithic stereotypes of the "Model Minority" myth. It reclaims the intellectual and creative agency of early
+          artisans, the original programmers of textiles and architecture, to prove that extreme technical rigor and
+          profound creative expression are deeply entwined in Chinese and Asian heritage.
         </p>
-        
+
         <div style="background-color: rgba(0,0,0,0.2); border-left: 3px solid var(--color-primary); padding: 1rem;">
-          <strong style="color: var(--color-text-light); display: block; margin-bottom: 0.5rem;">How to explore the map:</strong>
-          The map below is currently centered on China. You can explore the landscape by interacting with the highlighted regional territories. Each colored polygon represents a unique cultural sphere. Select a region to uncover the history, structural geometry, and mathematical "code" behind its specific design.
+          <strong style="color: var(--color-text-light); display: block; margin-bottom: 0.5rem;">How to explore the
+            map:</strong>
+          The map below is currently centered on China. You can explore the landscape by interacting with the
+          highlighted regional territories. Each colored polygon represents a unique cultural sphere. Select a region to
+          uncover the history, structural geometry, and mathematical "code" behind its specific design.
         </div>
       </div>
-      
+
       <div class="modal-buttons" style="display: flex; gap: 1.5rem; justify-content: center;">
-        <a href="about.html" class="brutal-btn outline-btn" style="flex: 1; text-align: center; max-width: 250px;">About the Project</a>
-        <button id="enterMapBtn" class="brutal-btn" style="flex: 1; text-align: center; max-width: 250px;">Enter the Atlas</button>
+        <a href="about.html" class="brutal-btn" style="flex: 1; text-align: center; max-width: 250px;">About the
+          Project</a>
+        <button id="enterMapBtn" class="brutal-btn" style="flex: 1; text-align: center; max-width: 250px;">Enter the
+          Map</button>
       </div>
 
     </div>
@@ -58,20 +74,65 @@
 
     <div class="map-legend">
 
-      <h3 style="color: var(--color-accent); font-size: 14px; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Motif Regions</h3>
+      <h3
+        style="color: var(--color-accent); font-size: 14px; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+        Motif Regions</h3>
       <p style="font-size: 12px; color: var(--color-surface); margin-bottom: 1rem; line-height: 1.4;">
         Select a highlighted territory to explore its regional pattern.
       </p>
-      <ul style="list-style: none; padding: 0; margin: 0; color: var(--color-text-light); font-size: 13px; line-height: 1.8;">
+      <ul
+        style="list-style: none; padding: 0; margin: 0; color: var(--color-text-light); font-size: 13px; line-height: 1.8;">
         <li><span class="legend-color" style="background: #e63946;"></span> Jiangnan (Ruyi Cloud)</li>
-        <li><span class="legend-color" style="background: #f4a261;"></span> Xizang (Endless Knot)</li>
+        <li><span class="legend-color" style="background: #f4a261;"></span> Tibet (Endless Knot)</li>
         <li><span class="legend-color" style="background: #2a9d8f;"></span> Shaanxi (Mountain Armor)</li>
-        <li><span class="legend-color" style="background: #e9c46a;"></span> Henan (Thunder Pattern)</li>
+        <li><span class="legend-color" style="background: #e9c46a;"></span> Guizhou (Miao Butterfly Motif)</li>
+        <li><span class="legend-color" style="background: #8d99ae;"></span> Xinjiang (Uyghur Atlas Motif)</li>
+        <li><span class="legend-color" style="background: #c77dff;"></span> Hunan (Tujia Xilankapu Pattern)</li>
       </ul>
+    </div>
+
+    <div id="motifPanel" class="motif-panel">
+      <div class="motif-panel-inner">
+        <div class="motif-panel-top">
+          <span id="motifPanelRegion" class="motif-panel-region">Region</span>
+          <button id="closeMotifPanel" class="motif-panel-close" aria-label="Close motif panel">✕</button>
+        </div>
+
+        <div class="motif-panel-content">
+          <h2 id="motifPanelTitle" class="motif-panel-title">Motif Title</h2>
+          <p id="motifPanelDesc" class="motif-panel-desc"></p>
+
+          <div id="motifPanelImageWrap" class="motif-panel-image-wrap">
+            <div class="motif-panel-image-placeholder">Add motif image / historical image / diagram here</div>
+          </div>
+          <p id="motifPanelImageCaption" class="motif-panel-caption"></p>
+
+          <div class="motif-panel-section">
+            <h3>Origins</h3>
+            <p id="motifPanelOrigins"></p>
+          </div>
+
+          <div class="motif-panel-section">
+            <h3>Modern Usage</h3>
+            <p id="motifPanelModern"></p>
+          </div>
+
+          <div class="motif-panel-section">
+            <h3>Math: Geometry</h3>
+            <p id="motifPanelMath"></p>
+          </div>
+
+          <div class="motif-panel-section motif-panel-section-note">
+            <h3>Computational Thinking Lens</h3>
+            <p id="motifPanelCT"></p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,53 +22,170 @@
     </ul>
   </header>
 
-  <main class="editorial-container">
-    
-    <header class="editorial-header">
-      <h1>About the <span style="color: var(--color-primary);">Project</span></h1>
-      <p class="text-side" style="font-family: var(--font-sans); font-size: 16px;">
-        Intersecting Ethnocomputing, Culture, and Design
-      </p>
-    </header>
+  <main class="about-page-shell">
 
-    <div class="editorial-block">
-      <h3 style="color: var(--color-primary);">The Practicum Vision</h3>
-      <p><strong>Mapping Chinese Cultural Motifs</strong> originated as a design-based practicum project aimed at exploring the intersection of cultural traditions and computational thinking. Inspired by the Culturally Situated Design Tools (CSDT) framework—a pedagogical approach rooted in ethnocomputing—this project seeks to demonstrate that complex mathematical and algorithmic ideas have existed within indigenous and traditional arts for centuries.</p>
-      
-      <p>Rather than viewing Chinese motifs simply as decorative "folk art," this curriculum treats them as sophisticated visual systems. By translating the geographic origins and geometric rules of motifs like the Ruyi Cloud into an interactive digital space, the project transforms traditional heritage into a live, explorable syllabus.</p>
-    <p>Motifs have long played a central role in Chinese material and architectural cultures. From window and door screens that filter light and organize space, to patterned surfaces used in clothing, tools, and protective gear, motifs operate as systems rather than standalone decorations. They balance repetition and variation, rigidity and flexibility, allowing a small structural unit to extend across a surface with precision and control. These designs are not only visually appealing, but also deeply practical, for regulating airflow, reinforcing structure, and signaling identity through ordered form. The histories embedded in motif-based designs reveal how people have long used rule-based thinking to solve material and spatial problems.
+    <section class="about-main-column">
+      <header class="editorial-header about-editorial-header">
+        <span class="section-kicker">About the Project</span>
+        <h1>Computing, Culture, and the Politics of <span class="highlight">Recognition</span></h1>
+        <p class="about-subtitle">
+          A digital humanities and culturally responsive computing project grounded in ethnocomputing.
+        </p>
+      </header>
 
-Today, motif logics continue to appear in contemporary architecture, fashion, digital design, and game environments. Yet the computational thinking embedded in these systems often goes unnoticed. This CSDT curriculum makes those ideas visible by translating motif-based cultural designs into programmable structures. Through guided exploration and making, students learn how constraints, transformations, and repetition generate complex outcomes, through important computing rule. 
-
-This Chinese Cultural Motif CSDT centers motif-based design traditions from especially Han culture, while also aims for a elaboration of including cultural designs from more underrepresented ethnic groups in China. The curriculum brings together architectural motif, surface patterns, and structurally rigid forms such as armor-inspired designs to create multiple points of engagement for students with different interests. By emphasizing how functional demands shape visual systems, the project highlights a form of cultural computing that is especially well suited for learners drawn to engineering, construction, and system-oriented thinking. 
-</p>
-    </div>
-
-    <div class="editorial-block">
-      <h3 style="color: var(--color-primary);">Challenging Hegemony</h3>
-      <p>A driving force behind this platform is the need to combat persistent stereotypes surrounding Asian and Asian American communities, particularly the "Model Minority" myth and the "Bamboo Ceiling." In many Western and tech-centric spaces, Asian individuals are frequently stereotyped as highly technical and hard-working, but lacking in creative agency or innovative leadership.</p>
-
-      <p>By archiving and mapping the computational logic embedded within Chinese cultural motifs, this project acts as a counter-narrative. It reclaims the intellectual labor of early artisans—the original "programmers" of textiles, ceramics, and architecture—and proves that extreme technical rigor and profound creative expression are deeply entwined in Eastern heritage.</p>
-    </div>
-
-    <div class="editorial-block" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--color-surface);">
-      <h3 style="color: var(--color-primary);">About the Developer</h3>
-      <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 1.5rem;">
-        <div style="flex-shrink: 0; width: 150px; height: 150px; background-color: var(--color-surface); border: 2px solid var(--color-primary); display: flex; align-items: center; justify-content: center;">
-          <img src="images/Profile_Pic.png" alt="Developer Image" style="width: 100%; height: 100%; object-fit: cover;">
+      <section class="editorial-block about-intro-block">
+        <div class="keyword-ribbon">
+          <span>Ethnocomputing</span>
+          <span>Computational Thinking</span>
+          <span>Anti-Racist CS Education</span>
+          <span>Chinese Motifs</span>
         </div>
-        <div>
-          <p><strong>Xinyue Zhou</strong></p>
-          <p style="font-size: 15px;">I am an educational designer, developer, and researcher passionate about bridging the gap between cultural heritage and computer science education. My work focuses on creating digital environments that empower students to see their own identities reflected in STEM fields.</p>
-          <p style="font-size: 15px;">Through this practicum, I hope to provide educators and learners with a tool that not only teaches algorithmic thinking but also fosters a deep, anti-racist appreciation for the diverse and multi-ethnic origins of global technology.</p>
+
+        <p>
+          <span class="drop-cap">T</span>he Mapping Chinese Cultural Motifs project is part of a broader
+          design-based research agenda on culturally responsive computing education. It grows out of my practicum
+          project, which examines how anti-Asian stereotypes, especially the Model Minority myth and the Bamboo Ceiling,
+          shape how Asian and Asian American students are perceived in computing. These narratives often recognize
+          technical competence while discounting creativity, cultural agency, and leadership. This project responds by
+          asking how computing education might challenge, rather than reproduce, those assumptions.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            This project asks not only who enters computing, but who is recognized as creative, agentic, and capable of shaping the field.
+          </p>
+        </div>
+
+        <p>
+          At the center of the project is the claim that traditional Chinese motifs are not only cultural artifacts but
+          also sites of computational and mathematical thought. Patterns such as the Ruyi Cloud, lattice window designs,
+          and other regional forms can be understood through repetition, symmetry, recursion, scaling, decomposition,
+          and geometric transformation. In this sense, computational thinking is treated not only as a modern programming
+          skill, but also as a way of reasoning and making that has long been present in artistic and cultural practice.
+        </p>
+
+        <p>
+          This perspective is grounded in ethnocomputing, which studies how computational ideas are embedded in cultural
+          practices and local knowledge systems. Rather than separating technical knowledge from culture, ethnocomputing
+          shows that computing can also be found in weaving, architecture, ornament, craft, and other design traditions.
+          Here, Chinese motifs are not added as decorative examples alongside computing content. They are treated as
+          serious computational texts through which students can engage coding logic, mathematical structure, and cultural
+          interpretation together.
+        </p>
+
+        <div class="interactive-note">
+          <h4>Why this matters</h4>
+          <p>
+            Although Asian students are often visible in computing in numerical terms, Asian cultural knowledge remains
+            far less visible in computing pedagogy. By centering Chinese motifs, this project argues that Asian cultural
+            forms belong within CS education as rigorous material for inquiry, design, and learning.
+          </p>
+        </div>
+
+        <p>
+          Within this larger agenda, the mapping platform serves as both a research intervention and a public-facing
+          digital humanities component. Through interactive cartography and motif documentation, it maps the regional,
+          ethnic, and historical diversity of Chinese cultural designs while laying the groundwork for culturally situated
+          computing activities. The project therefore brings together cultural documentation, computational analysis, and
+          anti-racist pedagogy in one shared space.
+        </p>
+      </section>
+
+      <section class="editorial-block">
+        <h3 class="about-section-title">From Motif to Computational Form</h3>
+        <div class="about-card-grid">
+          <article class="about-info-card">
+            <h4>Cultural Form</h4>
+            <p>
+              Motifs in Chinese material and architectural culture are not isolated decorations. They act as systems,
+              organizing structure, rhythm, repetition, and identity across surfaces and spaces.
+            </p>
+          </article>
+
+          <article class="about-info-card">
+            <h4>Computational Logic</h4>
+            <p>
+              These forms can be studied through recursion, symmetry, iteration, transformation, and modular design,
+              making them especially valuable for teaching computational thinking through visual structure.
+            </p>
+          </article>
+
+          <article class="about-info-card">
+            <h4>Pedagogical Use</h4>
+            <p>
+              Through CSDT-inspired activities, students can move from observing a motif to analyzing its rules and then
+              rebuilding it through block-based coding.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="editorial-block">
+        <h3 class="about-section-title">Why This Project Challenges Hegemony</h3>
+        <p>
+          A central motivation behind this platform is the need to challenge racialized narratives that cast Asian and
+          Asian American learners as technically strong but not especially creative or leader-like. By documenting the
+          computational logic embedded in Chinese cultural motifs, the project offers a counter-narrative: technical rigor
+          and creative expression are not opposites, and both are deeply present in Chinese cultural production.
+        </p>
+        <p>
+          This also extends the rationale for anti-racist computing education beyond broadening participation alone.
+          Access matters, but access is insufficient if students are still positioned primarily as efficient executors
+          rather than imaginative makers. In that sense, this platform is not only about cultural visibility; it is also
+          about the politics of recognition within computing education.
+        </p>
+      </section>
+    </section>
+
+    <aside class="about-fixed-sidebar">
+      <div class="about-sidebar-inner">
+        <div class="about-profile-card">
+          <div class="about-profile-image-frame">
+            <img src="images/Profile_Pic.png" alt="Portrait of Xinyue Zhou" class="about-profile-image">
+          </div>
+
+          <div class="about-profile-text">
+            <span class="section-kicker">About the Researcher</span>
+            <h3>Xinyue Zhou</h3>
+            <p class="about-role"> PhD student in Educational Psychology and Educational Technology</p>
+            <p class="about-role">
+              Educational designer, developer, and researcher working at the intersection of cultural heritage,
+              computing education, and learning design.
+            </p>
+            <p>
+              My work focuses on building digital learning environments that help students see computing not only as a
+              technical field, but also as a cultural and creative practice.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-contact-card">
+          <h4>Contact & Collaboration</h4>
+          <p>
+            I welcome conversations with educators, researchers, designers, and community collaborators interested in
+            culturally responsive computing, digital humanities, Chinese cultural motifs, or curriculum design.
+          </p>
+
+          <div class="about-contact-list">
+            <a href="mailto:zhouxi66@msu.edu">zhouxi66@msu.edu</a>
+            <a href="index.html">Explore the Interactive Map</a>
+            <a href="knowledge.html">Read the Background</a>
+          </div>
+
+          <div class="about-collab-note">
+            <p>
+              Interested in contributing motifs, historical sources, teaching ideas, or feedback on the platform? I would
+              be glad to connect.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </aside>
 
   </main>
 
-  <footer class="brutal-footer" style="border-top: 1px solid var(--color-surface); background-color: var(--color-bg-light); color: var(--color-text-dark); padding: 2rem 4rem; text-align: center;">
-    <p style="font-size: 14px;">&copy; 2026 Mapping Chinese Cultural Motifs Project. All rights reserved.</p>
+  <footer class="about-footer">
+    <p>&copy; 2026 Mapping Chinese Cultural Motifs Project. All rights reserved.</p>
   </footer>
 
 </body>

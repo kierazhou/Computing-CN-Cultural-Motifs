@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8">
+  <title>Mountain Armor | Motif Map</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* =========================================
+       PAGE SPECIFIC UTILITIES & OVERRIDES
+       ========================================= */
+    
+    /* Layout styling for scrolling sections */
+    .motif-content {
+      margin-left: 300px;
+      padding: 0; 
+      width: calc(100% - 300px);
+    }
+
+    .content-wrapper {
+      max-width: 1000px; 
+      margin: 0 auto;
+      padding: 4rem;
+    }
+
+    .section-light {
+      background-color: var(--color-bg-light);
+      color: var(--color-text-dark);
+    }
+
+    .section-dark {
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-light);
+    }
+    
+    .section-dark .serif-title, 
+    .section-dark h3 {
+      color: var(--color-text-light);
+    }
+
+    /* Force Sidebar link styling */
+    .sidebar .nav-menu a {
+      display: block; 
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      color: var(--color-text-dark);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1rem;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .sidebar .nav-menu a:hover, 
+    .sidebar .nav-menu a.active {
+      background-color: var(--color-primary);
+      color: var(--color-text-light);
+      border: 1px solid var(--color-primary);
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 320px; 
+      z-index: 1000;
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    }
+
+    /* Image and layout utilities */
+    .caption {
+      font-size: 12px;
+      color: #666;
+      font-family: var(--font-sans);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .section-dark .caption {
+      color: #aaa;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border: 1px solid var(--color-surface);
+      background: #fff;
+    }
+
+    .split-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* Lightbox overlay classes */
+    .showcase-img { cursor: pointer; transition: transform 0.2s ease; }
+    .showcase-img:hover { transform: scale(1.02); border-color: var(--color-primary) !important; }
+    
+    #imageModal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+    #modalImg { max-width: 90%; max-height: 90%; border: 2px solid var(--color-primary); }
+    #closeModal { position: absolute; top: 20px; right: 40px; color: var(--color-text-light); font-size: 40px; font-weight: bold; cursor: pointer; font-family: var(--font-sans); }
+  </style>
+</head>
+<body id="top">
+
+  <div class="split-layout">
+    
+    <nav class="sidebar">
+      <div class="breadcrumb">MAP / MOUNTAIN ARMOR</div>
+      
+      <h2 style="font-size: 28px; line-height: 1.2;">Mountain Armor<br><span style="font-size: 20px; font-weight: normal;">(山文甲)</span></h2>
+      
+      <ul class="nav-menu" style="margin-top: 2rem;">
+        <li><a href="#origins" class="nav-link active">Origins & History</a></li>
+        <li><a href="#modern" class="nav-link">Modern Usage</a></li>
+        <li><a href="#geometry" class="nav-link">Math & Geometry</a></li>
+        <li><a href="#software" class="nav-link">Software</a></li>
+      </ul>
+
+      <a href="index.html" class="brutal-btn" style="margin-top: auto; text-align: center;">
+        ← Back to Map
+      </a>
+    </nav>
+
+    <main class="main-content motif-content">
+      
+      <section id="origins" class="section-light">
+        <div class="content-wrapper">
+          
+          <div style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;">
+            <p><span class="drop-cap">I</span>n this section, we will explore the methods you can use to discover the underlying algorithmic patterns that define mountain, chainmail, and fish-scale armor. While the ultimate source is consulting with real-world artisans to understand their traditional construction logic, our goal is to "translate" their methods into the language of classrooms and computers.</p>
+            <p>We'll begin by focusing on two basic principles: first, identify the repeating units that form the smallest structural block; and second, determine how those repeating units are transformed (using concepts like rotation, dilation, translation, or reflection) to cover a large surface. After establishing these fundamental principles, you can then proceed to examine each armor pattern individually.</p>
+          </div>
+
+          <div style="background-color: var(--color-surface); padding: 2rem; border-left: 4px solid var(--color-primary); margin-bottom: 4rem;">
+            <p style="font-family: var(--font-sans); font-size: 12px; color: var(--color-bg-light); text-align: center; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+              Click on any image to enlarge and view details
+            </p>
+            <div class="image-grid grid-3" style="margin: 0; gap: 10px;">
+              <img src="images/MountainArmor-target.jpg" class="showcase-img" alt="Mountain Armor Target Structure">
+              <img src="images/MountainArmor-Statue.jpg" class="showcase-img" alt="Historical Statue depicting Mountain Armor">
+              <img src="images/MountainArmor-FullBody.jpg" class="showcase-img" alt="Full Body Mountain Armor Reconstruction">
+            </div>
+            <p style="font-size: 12px; color: var(--color-bg-light); text-align: center; margin-top: 10px; opacity: 0.8;">
+              Sources: <a href="https://greatmingmilitary.blogspot.com/" target="_blank" style="color: inherit;">Great Ming Military</a> | <a href="https://www.reddit.com/r/ArmsandArmor/comments/15x0o9z/the_most_famous_armor_of_the_tang_dynasty/" target="_blank" style="color: inherit;">Reddit Arms & Armor</a>
+            </p>
+          </div>
+
+          <h1 class="serif-title mt-2">1. Origins</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%;">
+            <p>The Chinese Mountain Pattern armor, or <em>shan wen jia</em> (山文甲), is a type of armor frequently depicted in historical Chinese art, from paintings to statues. It is named for its distinctive, intricate pattern of smaller, interlocking plates that resemble the Chinese character for "mountain" (shān, 山). While it was likely worn by high-ranking officers from the Tang through the Ming dynasties and is often combined with mirror armor to create "shining armor" (míngguāngjiǎ), the true nature of shan wen jia is a subject of scholarly debate due to a lack of surviving archaeological examples.</p>
+            
+            <p>Historians remain divided on whether the mountain pattern armor was a functional combat armor or a highly stylized artistic convention. One theory suggests it was a practical and flexible form of armor made from numerous metal plates woven onto a backing, offering protection while distributing impact force. However, others argue that its appearance in art may have been a stylized representation of more conventional armor, such as lamellar or mail. Modern attempts at reconstruction have not conclusively settled the debate, leaving the exact construction and efficacy of the mountain pattern armor a mystery.</p>
+
+            <div class="split-container" style="margin-top: 3rem; margin-bottom: 3rem;">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/12STGegUUMo?si=W65BC0BKwetsFakA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/hljS179Rs8w?si=auOuwXRmQiodgcTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="readmore-card">
+  <div class="readmore-header">
+    <span class="readmore-kicker">Further Reading</span>
+    <h3>Read More</h3>
+    <p class="readmore-intro">
+      A small archive of articles and videos on the historical debate, visual traces,
+      and material interpretation of Shanwen Armor.
+    </p>
+  </div>
+
+  <div class="readmore-body">
+    <ul class="readmore-list">
+      <li>
+        <a href="https://greatmingmilitary.blogspot.com/2015/08/myth-of-shan-wen-kia.html" target="_blank" rel="noopener noreferrer">
+          <span class="readmore-index">01</span>
+          <span class="readmore-linktext">The myth of Shan Wen Jia</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bilibili.com/video/BV1gT421C7qr/" target="_blank" rel="noopener noreferrer">
+          <span class="readmore-index">02</span>
+          <span class="readmore-linktext">A Brief Discussion on the Patterns and Traces of the Shanwenjia Motif</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.thepaper.cn/newsDetail_forward_1648730" target="_blank" rel="noopener noreferrer">
+          <span class="readmore-index">03</span>
+          <span class="readmore-linktext">Did the Chinese Warrior “Shanwen Armor” Widely Depicted in Murals Actually Exist?</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://zhuanlan.zhihu.com/p/675771055" target="_blank" rel="noopener noreferrer">
+          <span class="readmore-index">04</span>
+          <span class="readmore-linktext">A Study on the Form of the Mountain-Patterned Armor</span>
+        </a>
+      </li>
+    </ul>
+
+    <figure class="readmore-figure">
+      <img src="images/MountainArmor_ReadMore.jpeg" alt="Visual context for further reading on Shanwen Armor" class="readmore-image">
+      <figcaption class="readmore-caption">
+        Visual context for the historical and material discussion surrounding Shanwen Armor.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="modern" class="section-dark">
+        <div class="content-wrapper">
+          <h1 class="serif-title">2. Modern Usage</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%; border-bottom: none;">
+            <p>Although Mountain Armor (山纹甲) originated as a protective system in historical China, today it is more influential as a visual and structural motif than as actual armor. Because the original armor is primarily known through paintings and sculptures rather than surviving artifacts, the pattern has been widely reinterpreted in modern design.</p>
+
+            <h3 style="color: var(--color-accent); margin-top: 2rem;">Films, Games and Digital Media</h3>
+            <p>Mountain armor patterns frequently appear in historical films, fantasy media, and video games, where they are used to represent strength, discipline, and elite warriors. Designers adapt the repeating “mountain-shaped” units into stylized armor textures, often exaggerating the geometric structure to create a more visually striking and readable design.</p>
+
+            <div class="image-grid mt-2">
+              <div>
+                <img src="images/mountain_mulan_film.jpg" alt="Screenshot of film Mulan (2020) from disney" class="showcase-img">
+                <p class="caption">Screenshot of film Mulan (2020) from Disney</p>
+              </div>
+              <div>
+                <img src="images/mountain_game_wwm.jpg" alt="A armor costume from digital game Where Winds Meet" class="showcase-img">
+                <p class="caption">Armor costume from digital game Where Winds Meet</p>
+              </div>
+            </div>
+
+            <h3 style="color: var(--color-accent); margin-top: 3rem;">Fashion Product and Industrial Design</h3>
+            <p>In modern fashion and costume design, the pattern is reinterpreted as layered, interlocking geometric surfaces. Designers use it in textiles, stage costumes, and wearable art to evoke protection and structure, often translating the rigid armor logic into flexible materials such as fabric, leather, or 3D-printed elements.</p>
+            <p>The interlocking structure of mountain armor has inspired modular and protective design systems. Its logic (small repeating units forming a flexible but strong surface) can be seen in products such as protective gear, packaging structures, and even architectural facades that emphasize both strength and adaptability.</p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+              <img src="images/mountain_jewelery.jpg" alt="A modern usage of mountain pattern into jewelry design" class="showcase-img" style="max-width: 500px; border: 2px solid var(--color-surface);">
+              <p class="caption">A modern usage of the mountain pattern translated into jewelry design.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="geometry" class="section-light">
+        <div class="content-wrapper">
+          <h1 class="serif-title">3. Math & Geometry</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%;">
+            
+            <p>The Mountain Armor pattern is a highly structured, interlocking system originally designed for protection. Unlike more decorative motifs, its geometry emphasizes connection, stability, and repetition, making it especially useful for understanding how local units form strong global structures.</p>
+            
+            <div style="text-align: center; margin: 2rem 0 3rem;">
+              <img src="images/mountain_baseunit_whole.jpg" alt="Complete mountain pattern armor piece" class="showcase-img" style="width: 100%; max-width: 800px; border: 1px solid var(--color-surface);">
+              <p class="caption">Let’s look at this complete mountain pattern armor piece.</p>
+            </div>
+
+            <div class="split-container border-bottom" style="padding-bottom: 2rem;">
+              <div>
+                <h3 style="color: var(--color-primary);">1. Identify the Base Unit</h3>
+                <p>The Mountain Armor pattern is built from a repeating geometric unit. At its core, each unit can be understood as a combination of three connected hexagons, forming a Chinese character “山” (shan) mountain-like shape. By identifying this base unit, you will practice decomposition, breaking a complex structure into repeatable components.</p>
+              </div>
+              
+              <div style="background-color: var(--color-bg-light); padding: 1.5rem; text-align: center; border: 1px solid var(--color-surface);">
+                <strong style="font-family: var(--font-sans); display: block; margin-bottom: 1rem;">Identify and code the base unit:</strong>
+                <div class="image-grid" style="margin-top: 0; gap: 1rem;">
+                  <img src="images/mountain_baseCode.png" alt="Base Unit Code" style="border: none;">
+                  <img src="images/mountain_baseShape.png" alt="Base Unit Shape" style="border: none;">
+                </div>
+              </div>
+            </div>
+
+            <div class="split-container mt-2">
+              <div>
+                <h3 style="color: var(--color-primary);">2. Geometry and Symmetry</h3>
+                <p>The structure relies on hexagonal geometry, where each unit connects edge-to-edge with others. This allows the pattern to tile without gaps. Key geometric ideas include:</p>
+                <ul style="line-height: 1.6; margin-bottom: 1.5rem;">
+                  <li><strong>Tessellation:</strong> hexagons fill space completely</li>
+                  <li><strong>Symmetry:</strong> units repeat through rotation and translation</li>
+                  <li><strong>Alignment:</strong> consistent angles and edges maintain the structure</li>
+                </ul>
+                <p><em>(Coordinates and line construction follow the same principles introduced in the Ruyi Cloud section.)</em></p>
+              </div>
+              
+              <div>
+                <h3 style="color: var(--color-primary);">3. Pattern Formation</h3>
+                <p>The full pattern is formed by repeating and interlocking the base unit. Each unit connects to its neighbors, creating a flexible but stable system.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="software" class="section-dark">
+        <div class="content-wrapper">
+          <h1 class="serif-title">4. Software Representation</h1>
+          
+          <div class="museum-card mt-2" style="max-width: 100%; border-bottom: none;">
+            
+            <div class="split-container">
+              <div style="border: 1px solid var(--color-surface); padding: 2rem; background-color: rgba(255,255,255,0.02);">
+                <h3 style="margin-top: 0; color: var(--color-accent);">Mountain Armor 01</h3>
+                <p style="font-size: 14px; margin-bottom: 1rem;">Built inside a hexagon container.</p>
+                
+                <div style="background-color: #ffffff; padding: 1rem; text-align: center; margin-bottom: 1.5rem; border-radius: 4px;">
+                  <img src="images/MountainArmor01.png" alt="Hexagon rendering" style="border: none; max-height: 200px; object-fit: contain; width: 100%;">
+                  <img src="images/MountainArmor01_code.png" alt="Hexagon block code" style="border: none; margin-top: 1rem; width: 100%;">
+                </div>
+                
+                <a href="https://csdt.org/projects/51361/" target="_blank" class="brutal-btn" style="display: block; text-align: center;">Explore Code in CSDT</a>
+              </div>
+
+              <div style="border: 1px solid var(--color-surface); padding: 2rem; background-color: rgba(255,255,255,0.02);">
+                <h3 style="margin-top: 0; color: var(--color-accent);">Mountain Armor 02</h3>
+                <p style="font-size: 14px; margin-bottom: 1rem;">Feel free to explore another format: The reverse pattern.</p>
+                
+                <div style="background-color: #ffffff; padding: 1rem; text-align: center; margin-bottom: 1.5rem; border-radius: 4px;">
+                  <img src="images/MountainArmor02-Reverse.png" alt="Reverse pattern rendering" style="border: none; max-height: 250px; object-fit: contain; width: 100%;">
+                  <img src="images/MountainArmor02-Reverse_code.png" alt="Reverse pattern block code" style="border: none; margin-top: 1rem; width: 100%;">
+                </div>
+                
+                <a href="https://csdt.org/projects/51362/run" target="_blank" class="brutal-btn" style="display: block; text-align: center;">Explore Reverse Pattern</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+    </main>
+    
+    <a href="#top" class="scroll-top-btn brutal-btn">↑ Top</a>
+
+  </div>
+
+  <div id="imageModal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImg" src="">
+  </div>
+
+  <script>
+    // Lightweight script to update the active sidebar link as you scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".sidebar .nav-menu a.nav-link");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.classList.remove("active"));
+            const id = entry.target.getAttribute("id");
+            const activeLink = document.querySelector(`.sidebar .nav-menu a[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add("active");
+          }
+        });
+      }, {
+        rootMargin: "-20% 0px -70% 0px"
+      });
+
+      sections.forEach((section) => observer.observe(section));
+    });
+
+    // Image click-to-enlarge logic
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementById("closeModal");
+    const showcaseImages = document.querySelectorAll(".showcase-img");
+
+    showcaseImages.forEach(img => {
+      img.addEventListener("click", function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => { modal.style.display = "none"; });
+    modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+  </script>
+</body>
+</html>
