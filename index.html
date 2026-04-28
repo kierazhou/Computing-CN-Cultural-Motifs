@@ -12,16 +12,32 @@
 <body style="background-color: var(--color-bg-dark); overflow: hidden;">
 
   <div id="introModal" class="modal-overlay">
-    <div class="hero-overlay" style="position: relative; top: auto; left: auto; text-align: center; max-width: 500px;">
-      <h2 style="color: var(--color-text-light); margin-bottom: 1rem;">Welcome to the <br><span style="color: var(--color-accent);">Motif Archive</span></h2>
-      <p style="color: var(--color-surface); font-size: 14px; margin-bottom: 2rem;">
-        This digital space explores diverse cultural patterns. Select a highlighted region on the map to uncover the history, structural geometry, and lore behind each design.
-      </p>
+    <div class="hero-overlay" style="position: relative; top: auto; left: auto; text-align: left; max-width: 800px; width: 100%; padding: 3rem; box-sizing: border-box;">
       
-      <div class="modal-buttons">
-        <a href="knowledge.html" class="brutal-btn outline-btn">About</a>
-        <button id="enterMapBtn" class="brutal-btn">View Map</button>
+      <h2 style="color: var(--color-text-light); margin-bottom: 1.5rem; text-align: center;">
+        Welcome to the <br><span style="color: var(--color-accent);">Motif Archive</span>
+      </h2>
+      
+      <div style="color: var(--color-surface); font-size: 16px; margin-bottom: 2.5rem; line-height: 1.7;">
+        <p style="margin-bottom: 1rem;">
+          <strong>Mapping Chinese Cultural Motifs</strong> is an interactive cartography project that maps the rich, multi-ethnic presentation of Chinese cultural motifs. Built at the intersection of culturally responsive computing and design, this archive serves as a tool for CS education that actively works to fight against the hemogeneous thinking of Chinese culture and anti-Asian racism.
+        </p>
+        
+        <p style="margin-bottom: 1.5rem;">
+          By breaking down traditional patterns into their geometric and algorithmic rules, this project challenges the monolithic stereotypes of the "Model Minority" myth. It reclaims the intellectual and creative agency of early artisans, the original programmers of textiles and architecture, to prove that extreme technical rigor and profound creative expression are deeply entwined in Chinese and Asian heritage.
+        </p>
+        
+        <div style="background-color: rgba(0,0,0,0.2); border-left: 3px solid var(--color-primary); padding: 1rem;">
+          <strong style="color: var(--color-text-light); display: block; margin-bottom: 0.5rem;">How to explore the map:</strong>
+          The map below is currently centered on China. You can explore the landscape by interacting with the highlighted regional territories. Each colored polygon represents a unique cultural sphere. Select a region to uncover the history, structural geometry, and mathematical "code" behind its specific design.
+        </div>
       </div>
+      
+      <div class="modal-buttons" style="display: flex; gap: 1.5rem; justify-content: center;">
+        <a href="about.html" class="brutal-btn outline-btn" style="flex: 1; text-align: center; max-width: 250px;">About the Project</a>
+        <button id="enterMapBtn" class="brutal-btn" style="flex: 1; text-align: center; max-width: 250px;">Enter the Atlas</button>
+      </div>
+
     </div>
   </div>
 

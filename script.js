@@ -4,16 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('introModal');
   const enterBtn = document.getElementById('enterMapBtn');
 
-  // Check if user has visited before (optional, remove if you want it to pop up every time)
-  if (!sessionStorage.getItem('visited')) {
-    modal.style.display = 'flex';
-  } else {
-    modal.style.display = 'none';
-  }
+  // Ensure the modal ALWAYS displays when the page loads
+  modal.style.display = 'flex';
 
+  // Close the modal and reveal the map when the button is clicked
   enterBtn.addEventListener('click', () => {
     modal.style.display = 'none';
-    sessionStorage.setItem('visited', 'true');
   });
 
   // --- 2. LEAFLET MAP INITIALIZATION ---
